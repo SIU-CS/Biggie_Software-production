@@ -14,3 +14,6 @@ zachary.mcgee@siu.edu
 
 Andrew Duckworth
 atduck24@siu.edu
+
+Christian Garcia
+christianmgarcia@siu.edu

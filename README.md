@@ -4,3 +4,6 @@
 
 # Avtar Singh
 # avtar.singh@siu.edu
+
+# Zachary McGee
+# zachary.mcgee@siu.edu

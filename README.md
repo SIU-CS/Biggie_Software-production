@@ -11,3 +11,6 @@ avtar.singh@siu.edu
 
 Zachary McGee
 zachary.mcgee@siu.edu
+
+Andrew Duckworth
+atduck24@siu.edu

@@ -13,29 +13,22 @@
         <main class="mdl-layout__content mdl-color--grey-100">
             <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
                 <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-                    <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
-                        <h1>SIU Parking Assistant</h1>
+                    <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white text-center">
+                        <h1><img style="width:100px;height:100px" src="img/siu.png" alt="SIU Logo"> Parking Assistant</h1>
                         <hr style="margin-left: -20px"/>
                         <h2 class="mdl-card__title-text">Sign In or Sign Up!</h2>
                     </div>
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                    <div class="mdl-card__supporting-text mdl-color-text--grey-600  text-center">
                         <p>Enter an email and password below and either sign in to an existing account or sign up</p>
-                        <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email" />
-                        &nbsp;&nbsp;&nbsp;
-                        <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password" />
+                        <input class="mdl-textfield__input form-control" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email" />
+                        <br /><br />
+                        <input class="mdl-textfield__input form-control" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password" />
                         <br /><br />
                         <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
                         &nbsp;&nbsp;&nbsp;
                         <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
-                        &nbsp;&nbsp;&nbsp;
-                        <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
-                    
-                        <!-- Container where we'll display the user details -->
-                        <div class="quickstart-user-details-container">
-                            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-                            <div>Firebase auth <code>currentUser</code> object value:</div>
-                            <pre><code id="quickstart-account-details">null</code></pre>
-                        </div>
+                        <br /><br />
+                        <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Forgot your password? Reset it here!</button>
                     </div>
                 </div>
             </div>
@@ -172,16 +165,12 @@
                 var uid = user.uid;
                 var providerData = user.providerData;
                 // [START_EXCLUDE]
-                document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-                document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-                document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+                document.getElementById('quickstart-sign-in').textContent = 'Sign Out';
                 // [END_EXCLUDE]
             } else {
                 // User is signed out.
                 // [START_EXCLUDE]
-                document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-                document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-                document.getElementById('quickstart-account-details').textContent = 'null';
+                document.getElementById('quickstart-sign-in').textContent = 'Sign In';
                 // [END_EXCLUDE]
             }
             // [START_EXCLUDE silent]

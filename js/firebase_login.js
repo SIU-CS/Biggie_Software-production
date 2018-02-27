@@ -42,8 +42,8 @@
      * Handles the sign up button press.
      */
     function handleSignUp() {
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
+        var email = document.getElementById('signinemail').value;
+        var password = document.getElementById('signinpassword').value;
         if (email.length < 4) {
             alert('Please enter an email address.');
             return;

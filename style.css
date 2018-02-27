@@ -1,9 +1,18 @@
+.body{
+  padding-left:20px;
+}
+
 .header {
     background-color: #5E0001;
 }
 
+.header img{
+  width: 100px;
+  height: 100px;
+}
+
 .container{
-  width: 100%;
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -20,4 +29,36 @@
 
 .form-group {
   margin: 10px;
+}
+
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+  white-space: nowrap;
+}
+ul.tabs li{
+  width: 50%;
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+ul.tabs li.current{
+  width: 49%;
+	background: #ededed;
+  display: inline-block;
+	color: #222;
+}
+
+.tab-content{
+	display: none;
+	background: #ededed;
+	padding: 15px;
+}
+
+.tab-content.current{
+	display: inherit;
 }

@@ -51,7 +51,6 @@ ul.tabs li.current{
 	background: #ededed;
   display: inline-block;
 	color: #222;
-	margin-left: -2px;
 }
 
 .tab-content{

@@ -1,0 +1,23 @@
+.header {
+    background-color: #5E0001;
+}
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.floatleft, .floatright {
+    float:left;
+    width: 70%;
+    height: 400px;
+}
+
+.floatright {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    width: 30%;
+}
+
+.form-group {
+  margin: 10px;
+}

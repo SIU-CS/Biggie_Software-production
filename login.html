@@ -29,6 +29,9 @@
                         <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
                         <br /><br />
                         <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Forgot your password? Reset it here!</button>
+                        <br /><br /><br /><br />
+                        <p disabled hidden id="continue-as">Continue as</p>
+                        <button disabled hidden class="mdl-button mdl-js-button mdl-button--raised" id="continue-button" name="signin">Go</button>
                     </div>
                 </div>
             </div>
@@ -59,6 +62,7 @@
         if (firebase.auth().currentUser) {
             // [START signout]
             firebase.auth().signOut();
+            location.reload();
             // [END signout]
         } else {
             var email = document.getElementById('email').value;
@@ -166,6 +170,11 @@
                 var providerData = user.providerData;
                 // [START_EXCLUDE]
                 document.getElementById('quickstart-sign-in').textContent = 'Sign Out';
+                document.getElementById('continue-as').textContent = 'Coninue as ' + email + '?';
+                document.getElementById('continue-as').disabled = false;
+                document.getElementById('continue-button').disabled = false;
+                document.getElementById('continue-as').hidden = false;
+                document.getElementById('continue-button').hidden = false;
                 // [END_EXCLUDE]
             } else {
                 // User is signed out.

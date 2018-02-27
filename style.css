@@ -47,10 +47,11 @@ ul.tabs li{
 }
 
 ul.tabs li.current{
-  width: 49%;
+  width: 50%;
 	background: #ededed;
   display: inline-block;
 	color: #222;
+	margin-left: -2px;
 }
 
 .tab-content{

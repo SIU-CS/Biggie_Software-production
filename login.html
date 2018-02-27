@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
@@ -11,6 +11,7 @@
 </head>
 
 <body style="padding-left:20px">
+
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <main class="mdl-layout__content mdl-color--grey-100">
             <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
@@ -30,18 +31,36 @@
                     	</ul>
 
                     	<div id="tab-1" class="tab-content current">
-                        <input class="mdl-textfield__input form-control" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email" />
-                        <br /><br />
-                        <input class="mdl-textfield__input form-control" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password" />
-                        <br /><br />
-                        <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
+
+                        <form>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+                          </div>
+                          <br>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                          </div>
+                        </form>
+                        <br>
+                        <button disabled class="btn btn-default" id="quickstart-sign-in" name="signin">Sign In</button>
                     	</div>
                     	<div id="tab-2" class="tab-content">
-                        <input class="mdl-textfield__input form-control" style="display:inline;width:auto;" type="text" id="signinemail" name="email" placeholder="Email" />
-                        <br /><br />
-                        <input class="mdl-textfield__input form-control" style="display:inline;width:auto;" type="password" id="signinpassword" name="password" placeholder="Password" />
-                        <br /><br />
-                        <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
+
+                        <form>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="signinemail" type="text" class="form-control" name="email" placeholder="Email">
+                          </div>
+                          <br>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="signinpassword" type="password" class="form-control" name="password" placeholder="Password">
+                          </div>
+                        </form>
+                        <br>
+                        <button class="btn btn-default" id="quickstart-sign-up" name="signup">Sign Up</button>
                     	</div>
 
                     </div><!-- container -->

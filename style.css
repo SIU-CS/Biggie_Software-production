@@ -39,6 +39,7 @@ ul.tabs{
 	list-style: none;
   white-space: nowrap;
 
+
 }
 ul.tabs li{
   width: 50%;
@@ -59,7 +60,7 @@ ul.tabs li{
     display: none;
     background: #efefef;
     padding: 15px;
-	border-radius: 0px 0px 15px 15px;
+    border-radius: 0px 0px 15px 15px;
 }
 
 .tab-content.current{

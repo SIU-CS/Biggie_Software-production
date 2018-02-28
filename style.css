@@ -14,7 +14,7 @@
 }
 
 .container{
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
 }
 
@@ -38,11 +38,11 @@ ul.tabs{
 	padding: 0px;
 	list-style: none;
   white-space: nowrap;
+
 }
 ul.tabs li{
   width: 50%;
 	background: none;
-	color: #222;
 	display: inline-block;
 	padding: 10px 15px;
 	cursor: pointer;
@@ -50,15 +50,16 @@ ul.tabs li{
 
     ul.tabs li.current {
         width: 50%;
-        background: #720000;
+        background: #efefef;
         display: inline-block;
-        color: white;
+		color: black;
     }
 
 .tab-content {
     display: none;
-    background: #720000;
+    background: #efefef;
     padding: 15px;
+	border-radius: 0px 0px 15px 15px;
 }
 
 .tab-content.current{

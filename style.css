@@ -46,17 +46,17 @@ ul.tabs li{
 	cursor: pointer;
 }
 
-ul.tabs li.current{
-  width: 50%;
-	background: #ededed;
-  display: inline-block;
-	color: #222;
-}
+    ul.tabs li.current {
+        width: 50%;
+        background: #720000;
+        display: inline-block;
+        color: white;
+    }
 
-.tab-content{
-	display: none;
-	background: #ededed;
-	padding: 15px;
+.tab-content {
+    display: none;
+    background: #720000;
+    padding: 15px;
 }
 
 .tab-content.current{

@@ -9,73 +9,58 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
-<body style="padding-left:20px">
-
-    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <main class="mdl-layout__content mdl-color--grey-100">
-            <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-                    <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white text-center">
-                        <h1><img style="width:100px;height:100px" src="img/siu.png" alt="SIU Logo"> Parking Assistant</h1>
-                    </div>
-
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-600  text-center">
-                        <p>Enter an email and password below and either sign in to an existing account or sign up</p>
-						<br /><br />
-                        <div class="container">
-
-                    	<ul class="tabs">
-                    		<li class="tab-link current" data-tab="tab-1">Sign In</li>
-                    		<li class="tab-link" data-tab="tab-2" style="margin-left: -4px">Sign Up</li>
-                    	</ul>
-
-                    	<div id="tab-1" class="tab-content current">
-
-                        <form>
-                          <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-                          </div>
-                          <br>
-                          <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-                          </div>
-                        </form>
-                        <br>
-                        <button disabled class="btn btn-default" id="quickstart-sign-in" name="signin">Sign In</button>
-                    	</div>
-                    	<div id="tab-2" class="tab-content">
-
-                        <form>
-                          <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="signinemail" type="text" class="form-control" name="email" placeholder="Email">
-                          </div>
-                          <br>
-                          <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="signinpassword" type="password" class="form-control" name="password" placeholder="Password">
-                          </div>
-                        </form>
-                        <br>
-                        <button class="btn btn-default" id="quickstart-sign-up" name="signup">Sign Up</button>
-                    	</div>
-
-                    </div><!-- container -->
-
-                        &nbsp;&nbsp;&nbsp;
-                        <br /><br />
-                        <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Forgot your password? Reset it here!</button>
-                        <br /><br /><br /><br />
-                        <p disabled hidden id="continue-as">Continue as</p>
-                        <a href="index.html"><button disabled hidden class="mdl-button mdl-js-button mdl-button--raised" id="continue-button" name="signin" href="index.html">Go</button></a>
-                    </div>
-                </div>
-            </div>
-        </main>
+<body>
+	<div class="text-center">
+        <h1><img style="width:100px; height:100px" src="img/siu.png" alt="SIU Logo"> Parking Assistant</h1>
     </div>
+    <div class="text-center">
+        <p>Enter an email and password below and either sign in to an existing account or sign up</p>
+		<br /><br />
+		<div class="container">
+			<ul class="tabs">
+				<li class="tab-link current" data-tab="tab-1">Sign In</li>
+				<li class="tab-link" data-tab="tab-2" style="margin-left: -4px">Sign Up</li>
+			</ul>
+			<div id="tab-1" class="tab-content current">
+				<form>
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<input id="email" type="text" class="form-control" name="email" placeholder="Email">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+						<input id="password" type="password" class="form-control" name="password" placeholder="Password">
+					</div>
+				</form>
+				<br>
+				<button disabled class="btn btn-default" id="quickstart-sign-in" name="signin">Sign In</button>
+			</div>
+			<div id="tab-2" class="tab-content">
+				<form>
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<input id="signinemail" type="text" class="form-control" name="email" placeholder="Email">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+						<input id="signinpassword" type="password" class="form-control" name="password" placeholder="Password">
+					</div>
+				</form>
+				<br>
+				<button class="btn btn-default" id="quickstart-sign-up" name="signup">Sign Up</button>
+            </div>
+		</div>
+		<div><!-- container -->
+			&nbsp;&nbsp;&nbsp;
+			<br /><br />
+			<button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Forgot your password? Reset it here!</button>
+			<br /><br /><br /><br />
+			<p disabled hidden id="continue-as">Continue as</p>
+			<a href="index.html"><button disabled hidden class="mdl-button mdl-js-button mdl-button--raised" id="continue-button" name="signin" href="index.html">Go</button></a>
+        </div>
+
 </body>
 </html>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>

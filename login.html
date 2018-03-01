@@ -10,14 +10,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: white; font-family: 'Roboto', sans-serif; background: url('img/campus.jpg') center no-repeat;
-  background-size: cover;">
-<div class="jumbotron text-center" style="background-color: #660000;     box-shadow: 0px 1px 5px black;">
-  <h1 style="color: white">SIU PARKING ASSISTANT</h1> 
-</div>
-    <div class="text-center" style="color: white">
-        <h4>Enter an email and password below and either sign in to an existing account or sign up</p>
-		<br /><br />
+<body class="body" height="100%">
+  <div class="header">
+    <img src="img/siu-parking-logo.png" alt="SIU Logo">
+  </div>
+    <div class="information-bar">
+        Enter an email and password below and either sign in to an existing account or sign up
+  </div>
+
+<div class="content">
 		<div class="container">
 			<ul class="tabs">
 				<li class="tab-link current" data-tab="tab-1">Sign In</li>
@@ -53,26 +54,26 @@
 				<br>
 				<button class="btn btn-default" id="quickstart-sign-up" name="signup">Sign Up</button>
             </div>
-		</div>
-		<div><!-- container -->
-			&nbsp;&nbsp;&nbsp;
-			<br /><br />
-			<button class="btn btn-default" id="quickstart-password-reset" name="verify-email">Forgot your password? Reset it here!</button>
-			<br /><br /><br /><br />
-			<p disabled hidden id="continue-as">Continue as</p>
-			<a href="index.html"><button disabled hidden style="display:none;" class=" btn btn-default" id="continue-button" name="signin" href="index.html">Go!</button></a>
-        </div>
-	</div>
-    <footer style="color: white">
-        <!-- Copyright-->
-        <div class="footer-copyright py-3 text-center">
-            <div class="container-fluid" style="bottom : 0; position: fixed; left: 0; bottom: 0; width: 100%;
-            text-align: center; padding-bottom: 15px">
-                Biggie Software © 2018
+
+            <div><!-- container -->
+              &nbsp;&nbsp;&nbsp;
+              <br /><br />
+              <button class="btn btn-default" id="quickstart-password-reset" name="verify-email">Forgot your password? Reset it here!</button>
+              <br /><br /><br /><br />
+              <p disabled hidden id="continue-as">Continue as</p>
+              <a href="index.html"><button disabled hidden style="display:none;" class=" btn btn-default" id="continue-button" name="signin" href="index.html">Go!</button></a>
             </div>
-        </div>
-        <!--/.Copyright -->
-    </footer>
+            <footer>
+                <!-- Copyright-->
+                <div class="footer">
+                  <p>Biggie Software © 2018</p>
+                </div>
+                <!--/.Copyright -->
+            </footer>
+		</div>
+</div>
+
+
 </body>
 </html>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>

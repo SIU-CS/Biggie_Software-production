@@ -51,14 +51,14 @@ ul.tabs li{
 
     ul.tabs li.current {
         width: 50%;
-        background: #efefef;
+        background: #660000;
         display: inline-block;
-		color: black;
+		color: white;
     }
 
 .tab-content {
     display: none;
-    background: #efefef;
+    background: #660000;
     padding: 15px;
     border-radius: 0px 0px 15px 15px;
 }

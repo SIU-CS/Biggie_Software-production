@@ -117,7 +117,7 @@
                 document.getElementById('continue-as').disabled = false;
                 document.getElementById('continue-button').disabled = false;
                 document.getElementById('continue-as').hidden = false;
-                document.getElementById('continue-button').hidden = false;
+                document.getElementById('continue-button').style.display = "initial";
                 // [END_EXCLUDE]
             } else {
                 // User is signed out.

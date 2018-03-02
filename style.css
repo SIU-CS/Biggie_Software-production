@@ -39,7 +39,7 @@ width: 100%;
 }
 
 .content {
-    min-height: 90%;
+    min-height: 100%;
     position: absolute;
     margin: 0 auto;
     text-align: center;

@@ -118,11 +118,13 @@
                 document.getElementById('continue-button').disabled = false;
                 document.getElementById('continue-as').hidden = false;
                 document.getElementById('continue-button').style.display = "initial";
+				document.getElementById('info-bar').hidden = true;
                 // [END_EXCLUDE]
             } else {
                 // User is signed out.
                 // [START_EXCLUDE]
                 document.getElementById('quickstart-sign-in').textContent = 'Sign In';
+				document.getElementById('info-bar').hidden = false;
                 // [END_EXCLUDE]
             }
             // [START_EXCLUDE silent]

@@ -34,7 +34,7 @@ width: 100%;
 
 .header img{
   margin: 20px 0 0 20px;
-  width: 420px;
+  width: 304px;
   height: 45px;
 }
 
@@ -53,9 +53,14 @@ width: 100%;
 .container{
   width: 40%;
   height: 100%;
-  margin: 10% auto;
   text-align: center;
   padding-top: 5%;
+}
+
+.container img{
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 30px;
 }
 
 .floatleft, .floatright {

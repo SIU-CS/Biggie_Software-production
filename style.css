@@ -1,6 +1,6 @@
 .html{
   height: 100%;
-width: 100%;
+	width: 100%;
 }
 
 .body{
@@ -94,12 +94,12 @@ ul.tabs li{
 	cursor: pointer;
 }
 
-    ul.tabs li.current {
-        width: 50%;
-        background: #660000;
-        display: inline-block;
-		color: white;
-    }
+ul.tabs li.current {
+    width: 50%;
+    background: #660000;
+    display: inline-block;
+	color: white;
+}
 
 .tab-content {
     display: none;

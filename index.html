@@ -6,22 +6,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700">
-	<script src="https://use.fontawesome.com/939e9dd52c.js"></script>
-	
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="app.css">
 </head>
 
 <body>
-
-	<div class="mainDiv" align="right">
-		<h1 id="fireHeading" align="left">Firebase Web App</h1>
-		<textarea id="mainText" placeholder="Enter text here ..."></textarea>
-		<button id="submitButton" onclick="submitClick()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-		</br></br>
-		<button id="but" onclick="newClick()"><i class ="fa fa-arrow-right" aria-hidden="true"></i></button>
-	</div>
-	
+    <h1>Parkin Spot List</h1>
+    <h3>Enter Paking Spot Number</h3>
+    <hr />
+    <input type="text" id="soptNum" placeholder="Enter your Parking Spot" onkeypress="return saveToList(event)" />
+    <h4>Occupided Spots</h4>
+    <ol id="allSpots">
+    </ol>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>

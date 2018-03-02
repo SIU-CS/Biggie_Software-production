@@ -1,0 +1,113 @@
+.html{
+  height: 100%;
+	width: 100%;
+}
+
+.body{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+    background-color: #600;
+    margin:0px auto;
+    height: 85px;
+    width: 100%;
+}
+
+.information-bar{
+  text-align: center;
+  background-color: #f1f1f1;
+  font-size: large;
+  padding: 10px;
+}
+
+.footer {
+  position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+}
+
+.header img{
+  margin: 20px 0 0 20px;
+  width: 304px;
+  height: 45px;
+}
+
+.content {
+    min-height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(0deg,rgba(0, 0, 0, 0.9),rgba(0,0,0,0.4)), url(img/campus.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.container{
+  width: 40%;
+  height: 100%;
+  text-align: center;
+  padding-top: 15%;
+}
+
+.container img{
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 30px;
+}
+
+.floatleft, .floatright {
+    float:left;
+    width: 70%;
+    height: 400px;
+}
+
+.floatright {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    width: 30%;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+  white-space: nowrap;
+
+
+}
+ul.tabs li{
+  width: 50%;
+	background: none;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+ul.tabs li.current {
+    width: 50%;
+    background: #660000;
+    display: inline-block;
+	color: white;
+}
+
+.tab-content {
+    display: none;
+    background: #660000;
+    padding: 15px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.tab-content.current{
+	display: inherit;
+}

@@ -13,9 +13,10 @@
     <h1>SIU Parking Payment System</h1>
     <h3>Pay for your parking spot here</h3>
     <hr />
+    <input type="text" id="lot" placeholder="Enter your Lot" onkeypress="return saveToList(event)" />
     <input type="text" id="spotNumber" placeholder="Enter your spot number" onkeypress="return saveToList(event)" />
-    <h4>Occupied Sopts</h4>
-    <ol id="allSpots">
+    <h4>Occupied Sopts in Lot A</h4>
+    <ol id="lotASpots">
     </ol>
     <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
     <script type="text/javascript" src="app.js"></script>

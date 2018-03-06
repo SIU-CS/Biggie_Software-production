@@ -12,7 +12,13 @@ h1,h3 {
  
 #spotNumber
 {
-	width: 98%;
+	width: 30%;
+	padding: 9px;
+	font-size: 16px;
+}
+#lot
+{
+	width: 30%;
 	padding: 9px;
 	font-size: 16px;
 }

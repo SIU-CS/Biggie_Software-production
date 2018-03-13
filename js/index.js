@@ -9,9 +9,9 @@ var lotARef = lotsRef.child("SIU Lot A");
 
 //test function to just populate html list no DB intraction
 function saveToList(event) {
-    if (event.which == 13 || event.keyCode == 13) { // as the user presses the enter key, we will attempt to save the data
+    if (event.which == 13 || event.keyCode == 13 || event.which == 1) { // as the user presses the enter key, we will attempt to save the data
         var spotNumber = document.getElementById('spotNumber').value.trim();
-        if (spotNumber.length > 0) {
+        if (spotNumber.length == 3) {
             saveToFB(spotNumber);
         	var li = '<li>' + spotNumber + '</li>';
             document.getElementById('lotASpots').innerHTML += li;

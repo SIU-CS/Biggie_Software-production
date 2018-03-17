@@ -112,15 +112,6 @@ ul.tabs li.current {
 .tab-content.current{
 	display: inherit;
 }
-=======
-body {
-	background: #21252b;
-	color: #333;
-	font-size: 14px;
-	font-family: 'Raleway', sans-serif;
-	padding: 0;
-	margin: 0;
-}
 
 * {
 	box-sizing: border-box;
@@ -158,7 +149,7 @@ textarea {
 	resize: none;
 }
 
-button {
+button.elipseButton {
 	background: #528bff;
 	color: #fff;
 	position: relative;
@@ -168,4 +159,3 @@ button {
 	line-height: 38px;
 	border-radius: 100%;
 }
->>>>>>> fr2

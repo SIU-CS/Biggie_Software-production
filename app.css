@@ -1,0 +1,32 @@
+body {
+	font-family: "calibri";
+    background: #efefef;
+    padding: 32px;
+    padding-top: 16px;
+    color: #333;
+}
+h1,h3 {
+	text-align: center;
+	color: #787878;
+}
+ 
+#spotNumber
+{
+	width: 30%;
+	padding: 9px;
+	font-size: 16px;
+}
+#lot
+{
+	width: 30%;
+	padding: 9px;
+	font-size: 16px;
+}
+
+#save
+{
+	width: 10%;
+	padding: 9px;
+	font-size: 16px;
+
+}

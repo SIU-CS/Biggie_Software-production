@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<!DOCTYPE html>
 <html>
 <head>
@@ -34,3 +35,36 @@
 <script src="js/firebase_init.js"></script>
 <script src="js/firebase_login.js"></script>
 <script src="js/tabbed_div.js"></script>
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Database Test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+
+<body>
+    <h1>SIU Parking Payment System</h1>
+    <h3>Pay for your parking spot here</h3>
+    <hr />
+    <input type="text" id="lot" placeholder="Enter your Lot" onkeypress="return saveToList(event)" />
+    <input type="text" id="spotNumber" placeholder="Enter your spot number" onkeypress="return saveToList(event)" />
+	<button type="button" id="save" onclick="return saveToList(event)">Take Spot</button>
+    <h4>Occupied Sopts in Lot A</h4>
+    <ol id="lotASpots">
+    </ol>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+<script src="js/firebase_init.js"></script>
+<script src="js/index.js"></script>
+>>>>>>> fr2

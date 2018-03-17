@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .html{
   height: 100%;
 	width: 100%;
@@ -111,3 +112,60 @@ ul.tabs li.current {
 .tab-content.current{
 	display: inherit;
 }
+=======
+body {
+	background: #21252b;
+	color: #333;
+	font-size: 14px;
+	font-family: 'Raleway', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
+	margin: 0;
+	font-size: 16px;
+	outline: none;
+}
+
+input, button {
+	border: 0;
+	padding: 10px;
+}
+
+.mainDiv {
+	background: #fff;
+	padding: 20px;
+	width: 450px;
+	margin: 0px auto;
+	margin-top: 200px;
+	box-shadow: 0 0 20px #333;
+}
+
+h1 {
+	font-weight: 300;
+	font-size: 24px;
+}
+
+textarea {
+	border: 0px;
+	background: #fff;
+	padding: 20px 0px;
+	outline: none;
+	width: 100%;
+	resize: none;
+}
+
+button {
+	background: #528bff;
+	color: #fff;
+	position: relative;
+	top: 50px;
+	width: 64px;
+	height: 64px;
+	line-height: 38px;
+	border-radius: 100%;
+}
+>>>>>>> fr2

@@ -21,7 +21,10 @@
     <div>
 		<h3>Pay for your parking spot here</h3>
 		<hr/>
-		<input type="text" id="lot" placeholder="Enter your Lot" onkeypress="return saveToList(event)" />
+        <select id="lot" onkeypress="return saveToList(event)">
+            <option value="SIU Lot A">SIU Lot A</option>
+            <option value="SIU Lot B">SIU Lot B</option>
+        </select>
 		<input type="text" id="spotNumber" placeholder="Enter your spot number" onkeypress="return saveToList(event)" />
 		<button type="button" class="elipseButton" id="save" onclick="return saveToList(event)">Take Spot</button>
 	<h4>Spots Occupied in SIU lot A</h4>

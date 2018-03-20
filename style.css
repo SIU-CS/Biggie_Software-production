@@ -78,19 +78,15 @@
   margin: 10px;
 }
 
-ul.tabs{
-<<<<<<< HEAD
-	margin: 0;
-	padding: 0;
-=======
-	margin: 0px;
-	padding: 0px;
-  background-color: #600;
->>>>>>> f7aebd228726da9841de5c08b2a7d475813c5cb9
-	list-style: none;
-  white-space: nowrap;
-
-
+ul.tabs {
+    margin: 0;
+    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    background-color: #600;
+    list-style: none;
+    white-space: nowrap;
+    color: #A9A9A9;
 }
 ul.tabs li{
   width: 50%;

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Dashboard</title>
@@ -20,8 +20,10 @@
 		<input type="text" id="lot" placeholder="Enter your Lot" onkeypress="return saveToList(event)" />
 		<input type="text" id="spotNumber" placeholder="Enter your spot number" onkeypress="return saveToList(event)" />
 		<button type="button" class="elipseButton" id="save" onclick="return saveToList(event)">Take Spot</button>
-		<h4>Occupied Sopts in Lot A</h4>
-		<ol id="lotASpots"></ol>
+	<h4>Spots Occupied in SIU lot A</h4>
+    <ol id="lotASpots">
+            <lh>Spot &nbsp;&nbsp;&nbsp; Time Paid on</lh>
+        </ol>
 		<footer>
         <!-- Copyright-->
         <div class="footer-copyright py-3 text-center">

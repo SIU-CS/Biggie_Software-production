@@ -5,34 +5,40 @@ var firebaseRef = firebase.database().ref();
 var lotsRef = firebaseRef.child("Lots");
 var lotARef = lotsRef.child("SIU Lot A/");
 var spot
-
+refreshList();
 //get data from firebase
 //genrates a simple html list from key value of each lot thats occupied
-lotARef.once("value").then(function (snapshot) {
-    snapshot.forEach(function (childSnapshot) {
-        var key = childSnapshot.key;
-        var childData = childSnapshot.val();
+function refreshList() {
+    document.getElementById("lotASpots").innerHTML = "";
+    lotARef.once("value").then(function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
+            var key = childSnapshot.key;
 
-        var timerem = childSnapshot.val().timerem;
-        var li = '<li>' + key + '</li>';
-        document.getElementById('lotASpots').innerHTML += li;
+            //get data for each element in the db
+            var childData = childSnapshot.val();
+            var timeStamp = childSnapshot.val().PaidOn;
+            var timerem = childSnapshot.val().TimeRem;
+            var li = '<li>' + key + " &nbsp;&nbsp;&nbsp;&nbsp;  " + timeStamp + '</li>';
+            document.getElementById('lotASpots').innerHTML += li;
 
+        });
     });
-});
+}
+
+
 //test function to just populate html list no DB intraction
 function saveToList(event) {
     if (event.which == 13 || event.keyCode == 13 || event.which == 1) { // as the user presses the enter key, we will attempt to save the data
         var spotNumber = document.getElementById('spotNumber').value.trim();
         if (spotNumber.length == 3) {
             saveToFB(spotNumber);
-            var li = '<li>' + spotNumber + '</li>';
-            document.getElementById('lotASpots').innerHTML += li;
 
         }
         document.getElementById('spotNumber').value = '';
         return false;
     }
 }
+
 
 //code to add spot to DB by lot reffrence 
 function saveToFB(spotNumber) {
@@ -41,7 +47,7 @@ function saveToFB(spotNumber) {
         TimeRem: "2:00:00",
         PaidOn: timeStamp()
     });
-
+    refreshList();
 }
 
 

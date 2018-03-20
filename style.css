@@ -11,7 +11,7 @@
 
 .header {
     background-color: #600;
-    margin:0px auto;
+    margin:0 auto;
     height: 85px;
     width: 100%;
 }
@@ -79,8 +79,8 @@
 }
 
 ul.tabs{
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	list-style: none;
   white-space: nowrap;
 
@@ -105,19 +105,11 @@ ul.tabs li.current {
     display: none;
     background: #660000;
     padding: 15px;
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 0 0 15px 15px;
 }
 
 .tab-content.current{
 	display: inherit;
-}
-
-* {
-	box-sizing: border-box;
-	font-family: 'Raleway', sans-serif;
-	margin: 0;
-	font-size: 16px;
-	outline: none;
 }
 
 input, button {
@@ -129,7 +121,7 @@ input, button {
 	background: #fff;
 	padding: 20px;
 	width: 450px;
-	margin: 0px auto;
+	margin: 0 auto;
 	margin-top: 200px;
 	box-shadow: 0 0 20px #333;
 }
@@ -140,15 +132,15 @@ h1 {
 }
 
 textarea {
-	border: 0px;
+	border: 0;
 	background: #fff;
-	padding: 20px 0px;
+	padding: 20px 0;
 	outline: none;
 	width: 100%;
 	resize: none;
 }
 
-button.elipseButton {
+.elipseButton {
 	background: #528bff;
 	color: #fff;
 	top: 50px;

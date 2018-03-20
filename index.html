@@ -7,28 +7,38 @@
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'> 
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 	<link rel="stylesheet" type="text/css" href="app.css">
 </head>
 <body>
 	<div class="header">
 		<img src="img/siu-parking-logo.png" alt="SIU Logo">
 	</div>
-	<div style="text-align:center;padding:1em 0;"> 
-        <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=America%2FChicago" width="350" height="140" frameborder="0" seamless></iframe>
-    </div>
-    <div class="container-fluid" style="width: 85%">
-		<h3>Pay for your parking spot here</h3>
-        <select id="lot" onkeypress="return saveToList(event)">
-            <option value="SIU Lot A">SIU Lot A</option>
-            <option value="SIU Lot B">SIU Lot B</option>
-        </select>
-		<input type="text" id="spotNumber" placeholder="Enter your spot number" onkeypress="return saveToList(event)" />
-		<button type="button" class="elipseButton" id="save" onclick="return saveToList(event)">Take Spot</button>
-	<h4>Spots Occupied in SIU Lot A</h4>
-    <ol id="lotASpots">
-        <h5>SPOT &nbsp;&nbsp;&nbsp; TIME PAID</h5>
-    </ol>
+
+	<div
+
+	<div style="text-align:center;padding:1em 0;">
+		<div class="sidebar">
+			<a href="#" class="active"><span class="glyphicon glyphicon-home"></span>  Home</a>
+		  <a href="#"><span class="glyphicon glyphicon-time"></span>  Purchase Spot</a>
+		  <a href="#"><span class="glyphicon glyphicon-usd"></span>  Pay Ticket</a>
+		</div>
+		<div class="main">
+    	<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=America%2FChicago" width="350" height="140" frameborder="0" seamless></iframe>
+    		<div class="container-fluid" style="width: 85%">
+					<h3>Pay for your parking spot here</h3>
+        	<select id="lot" onkeypress="return saveToList(event)">
+          	<option value="SIU Lot A">SIU Lot A</option>
+          	<option value="SIU Lot B">SIU Lot B</option>
+      		</select>
+					<input type="text" id="spotNumber" placeholder="Enter your spot number" onkeypress="return saveToList(event)" />
+					<button type="button" class="elipseButton" id="save" onclick="return saveToList(event)">Take Spot</button>
+					<h4>Spots Occupied in SIU Lot A</h4>
+    			<ol id="lotASpots">
+        		<h5>SPOT &nbsp;&nbsp;&nbsp; TIME PAID</h5>
+    			</ol>
+				</div>
+			</div>
 	<footer>
         <!-- Copyright-->
         <div class="footer-copyright py-3 text-center">

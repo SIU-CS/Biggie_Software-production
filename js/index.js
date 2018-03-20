@@ -14,6 +14,7 @@ function refreshList() {
     //reset the list every time 
     document.getElementById("lotASpots").innerHTML = " ";
     lotARef.once("value").then(function (snapshot) {
+		document.getElementById("lotASpots").innerHTML = " ";
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
 
@@ -28,6 +29,7 @@ function refreshList() {
 	
 	document.getElementById("lotBSpots").innerHTML = " ";
     lotBRef.once("value").then(function (snapshot) {
+		document.getElementById("lotBSpots").innerHTML = " ";
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
 

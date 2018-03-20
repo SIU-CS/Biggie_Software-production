@@ -10,6 +10,8 @@ refreshList();
 // Get data from Firebase DB
 // Generates a simple HTML list from key value of each lot that is occupied
 function refreshList() {
+    //reset the list every time 
+    document.getElementById("lotASpots").innerHTML = " ";
     lotARef.once("value").then(function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
@@ -22,6 +24,18 @@ function refreshList() {
             document.getElementById('lotASpots').innerHTML += li;
         });
     });
+}
+
+// function to populate html list every time new spot is taken 
+function saveToList(event) {
+    if (event.which == 13 || event.keyCode == 13 || event.which == 1) { // as the user presses the enter key, we will attempt to save the data
+        var spotNumber = document.getElementById('spotNumber').value.trim();
+        if (spotNumber.length == 3) {
+            saveToFB(spotNumber);
+        }
+        document.getElementById('spotNumber').value = '';
+        return false;
+    }
 }
 
 // Add spot to DB by lot reffrence 

@@ -1,7 +1,6 @@
 var mainText = document.getElementById("mainText");
 var submitButton = document.getElementById("submitButton");
 var firebaseRef = firebase.database().ref();
-
 var lotsRef = firebaseRef.child("Lots");
 var lotARef = lotsRef.child("SIU Lot A/");
 var spot
@@ -20,11 +19,9 @@ function refreshList() {
             var timerem = childSnapshot.val().TimeRem;
             var li = '<li>' + key + " &nbsp;&nbsp;&nbsp;&nbsp;  " + timeStamp + '</li>';
             document.getElementById('lotASpots').innerHTML += li;
-
         });
     });
 }
-
 
 //test function to just populate html list no DB intraction
 function saveToList(event) {
@@ -38,7 +35,6 @@ function saveToList(event) {
         return false;
     }
 }
-
 
 //code to add spot to DB by lot reffrence 
 function saveToFB(spotNumber) {

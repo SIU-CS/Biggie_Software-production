@@ -1,10 +1,9 @@
 body {
-	font-family: "calibri";
+    font-family: 'Roboto', sans-serif;
     background: #efefef;
-    padding: 32px;
-    padding-top: 16px;
     color: #333;
 }
+
 h1,h3 {
 	text-align: center;
 	color: #787878;
@@ -16,6 +15,7 @@ h1,h3 {
 	padding: 9px;
 	font-size: 16px;
 }
+
 #lot
 {
 	width: 30%;
@@ -28,5 +28,4 @@ h1,h3 {
 	width: 10%;
 	padding: 9px;
 	font-size: 16px;
-
 }

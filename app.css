@@ -1,0 +1,88 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #efefef;
+    color: #333;
+}
+
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 85px;
+  left: 0;
+  background-color: #2c3b41;
+  color: #4b646f;
+  font-family: 'Anonymous Pro', monospace;
+  overflow-x: hidden;
+}
+
+.sidebar a {
+  background-color: #2c3b41;
+  color: #b8c7ce;
+  display: block;
+  padding: 7px 12px 7px 12px;
+  text-decoration: none;
+  text-align: left;
+}
+
+.sidebar a:hover {
+    background-color: #1a2226;
+    color: white;
+}
+
+.sidebar a.active {
+    background-color: #1a2226;
+    color: white;
+}
+
+.main{
+  padding-left: 160px;
+}
+
+h1,h3 {
+	text-align: center;
+	color: #787878;
+}
+
+#spotNumber
+{
+	width: 30%;
+	padding: 9px;
+	font-size: 16px;
+}
+
+#lot
+{
+	width: 30%;
+	padding: 9px;
+	font-size: 16px;
+}
+
+#lotA
+{
+	text-align: left;
+	float:left;
+	padding-right: 25px;
+}
+
+#lotB
+{
+	text-align: left;
+	float: left;
+}
+
+
+#save
+{
+	width: 10%;
+	padding: 9px;
+	font-size: 16px;
+<<<<<<< HEAD
+}
+
+
+=======
+
+}
+>>>>>>> f7aebd228726da9841de5c08b2a7d475813c5cb9

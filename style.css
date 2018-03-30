@@ -11,7 +11,7 @@
 
 .header {
     background-color: #600;
-    margin:0px auto;
+    margin:0 auto;
     height: 85px;
     width: 100%;
 }
@@ -78,17 +78,23 @@
   margin: 10px;
 }
 
-ul.tabs{
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-  white-space: nowrap;
-
-
+ul.tabs {
+    margin: 0;
+    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    background-color: #600;
+    list-style: none;
+    white-space: nowrap;
+    color: #A9A9A9;
 }
 ul.tabs li{
   width: 50%;
+<<<<<<< HEAD
+  background: #560000;
+=======
 	background: #560303;
+>>>>>>> eb2ea497e045b07bd83dab1264b4da8271255625
 	display: inline-block;
 	padding: 10px 15px;
 	cursor: pointer;
@@ -105,9 +111,48 @@ ul.tabs li.current {
     display: none;
     background: #660000;
     padding: 15px;
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 0 0 15px 15px;
 }
 
 .tab-content.current{
 	display: inherit;
+}
+
+input, button {
+	border: 0;
+	padding: 10px;
+}
+
+.mainDiv {
+	background: #fff;
+	padding: 20px;
+	width: 450px;
+	margin: 0 auto;
+	margin-top: 200px;
+	box-shadow: 0 0 20px #333;
+}
+
+h1 {
+	font-weight: 300;
+	font-size: 24px;
+}
+
+textarea {
+	border: 0;
+	background: #fff;
+	padding: 20px 0;
+	outline: none;
+	width: 100%;
+	resize: none;
+}
+
+.elipseButton {
+	background: #528bff;
+	color: #fff;
+	top: 50px;
+	width: 64px;
+	height: 64px;
+	line-height: 38px;
+	border-radius: 100%;
+    margin-left: 15px;
 }

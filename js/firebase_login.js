@@ -1,6 +1,28 @@
      /**
      * Handles the sign in button pddress.
      */
+var displayName;
+var email;
+var emailVerified;
+var photoURL;
+var isAnonymous;
+var uid;
+var providerData;
+
+var firebaseRef = firebase.database().ref();
+
+// Function for associating auth user with a table in the db
+function addUser(){
+  var rootRef = firebase.database().ref();
+  var userRef = rootRef.child('USERS_TABLE/' + uid);
+  
+  userRef.set({
+    name: "NOT SET",
+    "email": email,
+    "something": "else"
+  });
+}
+
     function toggleSignIn() {
         if (firebase.auth().currentUser) {
             // [START signout]
@@ -67,6 +89,7 @@
             console.log(error);
             // [END_EXCLUDE]
         });
+
         // [END createwithemail]
     }
 
@@ -104,13 +127,16 @@
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
-                var displayName = user.displayName;
-                var email = user.email;
-                var emailVerified = user.emailVerified;
-                var photoURL = user.photoURL;
-                var isAnonymous = user.isAnonymous;
-                var uid = user.uid;
-                var providerData = user.providerData;
+                displayName = user.displayName;
+                email = user.email;
+                emailVerified = user.emailVerified;
+                photoURL = user.photoURL;
+                isAnonymous = user.isAnonymous;
+                uid = user.uid;
+                providerData = user.providerData;
+
+                addUser();
+
                 // [START_EXCLUDE]
                 document.getElementById('quickstart-sign-in').textContent = 'Sign Out';
                 document.getElementById('continue-as').textContent = 'Coninue as ' + email + '?';

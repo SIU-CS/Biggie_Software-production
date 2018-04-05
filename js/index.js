@@ -5,13 +5,26 @@ var lotsRef = firebaseRef.child("Lots");
 var lotARef = lotsRef.child("SIU Lot A/");
 var lotBRef = lotsRef.child("SIU Lot B/");
 var spot;
+var uid = "";
 
-refreshList();
+firebase.auth().onAuthStateChanged(user => {
+  if(!user) {
+    window.location = 'login.html';
+  }
+  else
+  {
+    uid = user.uid;
+    refreshList();
+  }
+});
 
 // Get data from Firebase DB
 // Generates a simple HTML list from key value of each lot that is occupied
 function refreshList() {
-    //reset the list every time 
+  document.getElementById("accountbar").innerHTML = " ";
+  document.getElementById('accountbar').innerHTML += uid;
+
+    //reset the list every time
     document.getElementById("lotASpots").innerHTML = " ";
     lotARef.once("value").then(function (snapshot) {
 		document.getElementById("lotASpots").innerHTML = " ";
@@ -26,7 +39,7 @@ function refreshList() {
 			document.getElementById('lotASpots').innerHTML += li;
         });
     });
-	
+
 	document.getElementById("lotBSpots").innerHTML = " ";
     lotBRef.once("value").then(function (snapshot) {
 		document.getElementById("lotBSpots").innerHTML = " ";
@@ -43,7 +56,7 @@ function refreshList() {
     });
 }
 
-// function to populate html list every time new spot is taken 
+// function to populate html list every time new spot is taken
 function saveToList(event) {
     if (event.which == 13 || event.keyCode == 13 || event.which == 1) { // as the user presses the enter key, we will attempt to save the data
         var spotNumber = document.getElementById('spotNumber').value.trim();
@@ -55,7 +68,7 @@ function saveToList(event) {
     }
 }
 
-// Add spot to DB by lot reffrence 
+// Add spot to DB by lot reffrence
 function saveToFB(spotNumber) {
     var inLot = document.getElementById('lot').value.trim();
     lotsRef.child(inLot).child(spotNumber).set({
@@ -65,7 +78,7 @@ function saveToFB(spotNumber) {
     refreshList();
 }
 
-// Create time stamp 
+// Create time stamp
 function timeStamp() {
     // Create a date object with the current time
     var now = new Date();

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+	<div class="header">
+		<img src="img/siu-parking-logo.png" alt="SIU Logo">
+	</div>
+
+	<div
+
+	<div style="text-align:center;padding:1em 0;">
+		<div class="sidebar" style="font-family: 'Roboto', sans-serif;">
+			<a href="#" class="active"><span class="glyphicon glyphicon-home"></span>    Home</a>
+		  <a href="#"><span class="glyphicon glyphicon-time"></span>    Purchase Spot</a>
+		  <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>    Pay Citation</a>
+		</div>
+		<div class="main">
+    	<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=America%2FChicago" width="350" height="140" frameborder="0" seamless></iframe>
+    		<div class="container-fluid" style="width: 85%">
+			<div>
+					<h3>Pay for your parking spot here</h3>
+			</div>
+            <div id="pay">
+                <form id="credit-card">
+                    <div id="form-head">
+                        <h4>Debit/Credit Card</h4>
+                    </div>
+                    
+                    <div id="form-body">
+                    <input id="card-number" type="text" placeholder="1000 1234 5678 9100">
+                    
+                    <div>
+                        <div id="month">
+                            <select name="Month">
+                                <option value="january">January</option>
+                                <option value="february">February</option>
+                                <option value="march">March</option>
+                                <option value="april">April</option>
+                                <option value="may">May</option>
+                                <option value="june">June</option>
+                                <option value="july">July</option>
+                                <option value="august">August</option>
+                                <option value="september">September</option>
+                                <option value="october">October</option>
+                                <option value="november">November</option>
+                                <option value="december">December</option>
+                            </select>
+                        </div>
+                        <div id="year">
+                            <select name="Year">
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div id="cvv">
+                        <div id="cvv-input">
+                            <input type="text" placeholder="CVV">
+                        </div>
+                    </div>
+                     <button type="submit" id="submit-btn"><a href="#">Submit</a></button>
+                     <button type="submit" id="paypal"><a href="#">Pay With PayPal</a></button>
+                    </div>
+                    </form>
+                </div>
+               
+	<footer>
+        <!-- Copyright-->
+        <div class="footer-copyright py-3 text-center">
+            <div class="container-fluid" style="bottom : 0; position: fixed; left: 0; bottom: 0; width: 100%;
+            text-align: center; padding-bottom: 15px">
+                Biggie Software © 2018
+            </div>
+        </div>
+        <!--/.Copyright -->
+    </footer>
+	</div>
+</body>
+</html>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/firebase_init.js"></script>
+<script src="js/index.js"></script>
+<script src="js/firebase_login.js"></script>
+<script src="js/tabbed_div.js"></script>
+<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+<script type="text/javascript" src="js/index.js"></script>

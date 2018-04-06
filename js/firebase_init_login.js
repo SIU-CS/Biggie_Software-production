@@ -8,9 +8,3 @@
         messagingSenderId: "869149371865"
     };
     firebase.initializeApp(config);
-
-    firebase.auth().onAuthStateChanged(user => {
-      if(user) {
-        window.location = 'index.html';
-      }
-    });

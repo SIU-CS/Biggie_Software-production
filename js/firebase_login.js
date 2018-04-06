@@ -1,23 +1,17 @@
      /**
      * Handles the sign in button pddress.
      */
-var displayName;
-var email;
-var emailVerified;
-var photoURL;
-var isAnonymous;
-var uid;
-var providerData;
 
 var firebaseRef = firebase.database().ref();
 
 // Function for associating auth user with a table in the db
-function addUser(){
+function addUser(uid, email, firstname, lastname){
   var rootRef = firebase.database().ref();
   var userRef = rootRef.child('USERS_TABLE/' + uid);
-  
+
   userRef.set({
-    name: "NOT SET",
+    "firstname": firstname,
+    "lastname": lastname,
     "email": email,
     "something": "else"
   });
@@ -64,8 +58,20 @@ function addUser(){
      * Handles the sign up button press.
      */
     function handleSignUp() {
+        firstname = document.getElementById('firstname').value;
+        lastname = document.getElementById('lastname').value;
         var email = document.getElementById('signinemail').value;
         var password = document.getElementById('signinpassword').value;
+
+        // Error checking
+        if(firstname.length < 1){
+          alert('Please enter a first name.');
+          return;
+        }
+        if(lastname.length < 1){
+          alert('Please enter a last name.');
+          return;
+        }
         if (email.length < 4) {
             alert('Please enter an email address.');
             return;
@@ -88,6 +94,12 @@ function addUser(){
             }
             console.log(error);
             // [END_EXCLUDE]
+        });
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            addUser(user.uid, user.email, firstname, lastname);
+          } 
         });
 
         // [END createwithemail]
@@ -127,15 +139,14 @@ function addUser(){
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
-                displayName = user.displayName;
-                email = user.email;
-                emailVerified = user.emailVerified;
-                photoURL = user.photoURL;
-                isAnonymous = user.isAnonymous;
-                uid = user.uid;
-                providerData = user.providerData;
+                var displayName = user.displayName;
+                var email = user.email;
+                var emailVerified = user.emailVerified;
+                var photoURL = user.photoURL;
+                var isAnonymous = user.isAnonymous;
+                var uid = user.uid;
+                var providerData = user.providerData;
 
-                addUser();
 
                 // [START_EXCLUDE]
                 document.getElementById('quickstart-sign-in').textContent = 'Sign Out';

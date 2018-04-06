@@ -4,72 +4,41 @@
 	<title>Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+		<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-	<link rel="stylesheet" type="text/css" href="app.css">
+		<link rel="stylesheet" type="text/css" href="app.css">
+		<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="js/dashboard.js"></script>
+		<script src="js/firebase_init_index.js"></script>
+		<script type="text/javascript" src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
 </head>
+
 <body>
 	<div class="header">
 		<img src="img/siu-parking-logo.png" alt="SIU Logo">
 	</div>
 
-	<div
-
 	<div style="text-align:center;padding:1em 0;">
-		<div class="sidebar" style="font-family: 'Roboto', sans-serif;">
+		<div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
 			<a href="#" id="accountbar">    Account</a>
-			<a href="#" class="active"><span class="glyphicon glyphicon-home"></span>    Home</a>
-		  <a href="#"><span class="glyphicon glyphicon-time"></span>    Purchase Spot</a>
+			<a href="#" id="homebtn" class="active" data-target="home"><span class="glyphicon glyphicon-home"></span>    Home</a>
+		  <a href="#" id="purchasebtn" data-target="purchase"><span class="glyphicon glyphicon-time"></span>    Purchase Spot</a>
 		  <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>    Pay Citation</a>
 		</div>
-		<div class="main">
-    	<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=America%2FChicago" width="350" height="140" frameborder="0" seamless></iframe>
-    		<div class="container-fluid" style="width: 85%">
-			<div>
-ng spot here</h3>
-        	<select id="lot" onkeypress="return saveToList(event)">
-          	<option value="SIU Lot A">SIU Lot A</option>
-          	<option value="SIU Lot B">SIU Lot B</option>
-      		</select>
-					<input type="text" id="spotNumber" placeholder="Enter your spot number" onkeypress="return saveToList(event)" />
-					<button type="button" class="elipseButton" id="save" onclick="return saveToList(event)">Take Spot</button>
-					</div>
-					<div id="lotA">
-						<h4 id="aTitle">Spots Occupied in SIU Lot A</h4>
-							<ol id="lotASpots">
-								<h5>SPOT &nbsp;&nbsp;&nbsp; TIME PAID</h5>
-							</ol>
 
-					</div>
-					<div id="lotB">
-						<h4 id="bTitle">Spots Occupied in SIU Lot B</h4>
-							<ol id="lotBSpots">
-								<h5>SPOT &nbsp;&nbsp;&nbsp; TIME PAID</h5>
-							</ol>
-					</div>
-				</div>
-				</div>
+		<div class="main" id="content">
+
 			</div>
-	<footer>
-        <!-- Copyright-->
-        <div class="footer-copyright py-3 text-center">
-            <div class="container-fluid" style="bottom : 0; position: fixed; left: 0; bottom: 0; width: 100%;
-            text-align: center; padding-bottom: 15px">
-                Biggie Software © 2018
-            </div>
-        </div>
-        <!--/.Copyright -->
-    </footer>
-	</div>
+		</div>
+</div>
+
+
 </body>
+
 </html>
-<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/firebase_init.js"></script>
-<script type="text/javascript" src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
-<script type="text/javascript" src="js/index.js"></script>

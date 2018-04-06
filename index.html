@@ -14,22 +14,36 @@
 		<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="js/dashboard.js"></script>
 		<script src="js/firebase_init_index.js"></script>
+		<script src="js/dropdownmenu.js"></script>
+		<script src="js/dashboard.js"></script>
 		<script type="text/javascript" src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
 </head>
 
 <body>
 	<div class="header">
-		<img src="img/siu-parking-logo.png" alt="SIU Logo">
+		<div class="logo">
+			<img src="img/siu-parking-logo.png" alt="SIU Logo">
+		</div>
+
+		<div onclick="myFunction()" class="accountbar">
+			<div class="profilepicture"><img src="img/defaultprofilepicture.png" alt="profilepicture"></div>
+			<div class="firstname">
+				<div class="firstnametext"><p class="fname" id="firstname"></p></div>
+				<div class="firstnamedropdown"><img id="menudrop" src="img/menudropclosed.png"></div>
+		</div>
+		<div id="myDropdown" class="dropdown-content">
+			<a href="#myacc">My Account</a>
+			<a href="#help">Help</a>
+			<a onClick="doSignOut()" href="#signout">Sign Out</a>
+		</div>
 	</div>
 
 	<div style="text-align:center;padding:1em 0;">
 		<div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
-			<a href="#" id="accountbar">    Account</a>
-			<a href="#" id="homebtn" class="active" data-target="home"><span class="glyphicon glyphicon-home"></span>    Home</a>
-		  <a href="#" id="purchasebtn" data-target="purchase"><span class="glyphicon glyphicon-time"></span>    Purchase Spot</a>
-		  <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>    Pay Citation</a>
+			<a href="#" id="homebtn" class="active" data-target="home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
+		  <a href="#" id="purchasebtn" data-target="purchase"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
+		  <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Pay Citation</a>
 		</div>
 
 			<div class="main" id="content">

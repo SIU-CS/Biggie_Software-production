@@ -17,6 +17,90 @@
     position: fixed;
 }
 
+.header img{
+  margin: 20px 0 0 20px;
+  width: 304px;
+  height: 45px;
+}
+
+.logo{
+  float: left;
+}
+
+.accountbar{
+  float: right;
+  margin-right: 30px;
+  margin-top: 30px;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.dropdown-content {
+    margin-top:40px;
+    margin-right: 10px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd
+}
+
+.show {
+  display:block;
+}
+
+.profilepicture{
+  float: left;
+}
+
+.profilepicture img{
+  width: 32px;
+  height: 32px;
+  margin: 0px 0px 0px 0px;
+}
+
+.firstname{
+  display: inline;
+  white-space: nowrap;
+  float: right;
+  margin-top: 6px;
+  margin-left: 5px;
+}
+
+.firstname p{
+  margin: 0px;
+}
+
+.firstname img{
+  width: 16px;
+  height: 16px;
+  margin: 0px 0px 0px 0px;
+}
+
+.firstnametext{
+  float: left;
+}
+
+.firstnamedropdown{
+  float:right;
+  width: 16px;
+  height: 16px;
+}
+
 .information-bar{
   text-align: center;
   background-color: #f1f1f1;
@@ -31,12 +115,6 @@
       width: 100%;
       color: white;
       text-align: center;
-}
-
-.header img{
-  margin: 20px 0 0 20px;
-  width: 304px;
-  height: 45px;
 }
 
 .content {

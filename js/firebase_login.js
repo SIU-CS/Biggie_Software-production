@@ -99,7 +99,7 @@ function addUser(uid, email, firstname, lastname){
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             addUser(user.uid, user.email, firstname, lastname);
-          } 
+          }
         });
 
         // [END createwithemail]
@@ -138,6 +138,7 @@ function addUser(uid, email, firstname, lastname){
         // [START authstatelistener]
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
+                window.location = 'index.html';
                 // User is signed in.
                 var displayName = user.displayName;
                 var email = user.email;

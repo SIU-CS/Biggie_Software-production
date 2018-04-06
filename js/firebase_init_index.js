@@ -1,5 +1,3 @@
-    var uid = "";
-
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyCWsMMBdgP5EfUmXMPRDBjyou8Rj8jzBDA",
@@ -19,8 +17,12 @@
       else
       // If someone is logged in, get the uid and place infomation
       {
-        uid = user.uid;
-        document.getElementById("accountbar").innerHTML = " ";
-        document.getElementById('accountbar').innerHTML += uid;
+        var uid = user.uid;
+        firebase.database().ref('/USERS_TABLE/' + uid).once('value').then(function(snapshot) {
+          var firstname = snapshot.val().firstname;
+          var lastname = snapshot.val().lastname;
+          var profilepicture = snapshot.val().profilepicture;
+          document.getElementById('firstname').innerHTML = firstname + " " + lastname;
+        });
       }
     });

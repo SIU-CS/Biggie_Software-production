@@ -10,7 +10,7 @@ body {
   position: fixed;
   z-index: 1;
   top: 85px;
-  left: 0;
+  left: 0px;
   background-color: #2c3b41;
   color: #4b646f;
   font-family: 'Anonymous Pro', monospace;

@@ -1,5 +1,3 @@
-getCurrentSpot();
-
 function getCurrentSpot(){
 firebase.database().ref('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').then(function(snapshot) {
 

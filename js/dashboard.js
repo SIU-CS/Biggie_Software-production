@@ -17,6 +17,10 @@ $(document).ready(function(){
       // Change the clicked nav button to active
       $("#" + this.id).addClass('active');
 
+      // Update the Current Spot Information
+      if(target === "home"){
+        getCurrentSpot();
+      }
       return false;
     });
   });

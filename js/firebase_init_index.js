@@ -1,4 +1,6 @@
     // Initialize Firebase
+    var guid = "";
+
     var config = {
         apiKey: "AIzaSyCWsMMBdgP5EfUmXMPRDBjyou8Rj8jzBDA",
         authDomain: "siu-parking-assistant-40a3f.firebaseapp.com",
@@ -18,6 +20,7 @@
       // If someone is logged in, get the uid and place infomation
       {
         var uid = user.uid;
+        guid = uid;
         firebase.database().ref('/USERS_TABLE/' + uid).once('value').then(function(snapshot) {
           var firstname = snapshot.val().firstname;
           var lastname = snapshot.val().lastname;

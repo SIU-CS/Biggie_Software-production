@@ -4,7 +4,7 @@
 }
 
 .body{
-  background-color: white;
+  background-color: #e4e5e6;
   height: 100%;
   width: 100%;
 }
@@ -141,6 +141,67 @@
   margin: 0 auto;
   display: block;
   padding-bottom: 30px;
+}
+
+.home{
+  margin-top: 85px;
+}
+
+.currentspot{
+  margin: 0 auto;
+  width: 97%;
+  border: 1px solid #c2cfd6;
+  height: 200px;
+}
+
+.cardTitle{
+  background-color: #f0f3f5;
+  height: 40px;
+  border-bottom: 1px solid #c2cfd6;
+  text-align: left;
+}
+
+.cardIcon{
+  float: left;
+}
+
+.cardText{
+
+}
+
+.cardTitle p{
+  padding: 10px;
+}
+
+.cardBody{
+ background-color: #FFF;
+ height: 158px;
+ padding: 10px;
+}
+
+.cardSpotInformation{
+  background-color: #2c3b41;
+  height: 138px;
+  border: 1px solid #c2cfd6;
+}
+
+.cardSpotTimeImage{
+  width: 156px;
+  height: 136px;
+  background: #1a2226 url("img/clock_image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left;
+}
+
+.cardSpotTimeLot{
+  text-align: left;
+  color: #FFF;
+  font-size: 80px;
+}
+
+.purchase{
+  margin-top: 85px;
 }
 
 .floatleft, .floatright {

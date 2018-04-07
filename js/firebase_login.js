@@ -7,13 +7,22 @@ var firebaseRef = firebase.database().ref();
 // Function for associating auth user with a table in the db
 function addUser(uid, email, firstname, lastname){
   var rootRef = firebase.database().ref();
-  var userRef = rootRef.child('USERS_TABLE/' + uid);
+  var userRef = rootRef.child('/USERS_TABLE/' + uid);
+
+  var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
+  parkingRef.set({
+    "Lot": "Null",
+    "Spot": "Null",
+    "PurchaseTime": "Null"
+  });
 
   userRef.set({
+    "credits": 0,
+    "priviledge": 0, //Normal users 0 and admins are 1
     "firstname": firstname,
     "lastname": lastname,
     "email": email,
-    "something": "else"
+    "profile_picture": "img/defaultprofilepicture.png"
   });
 }
 
@@ -138,7 +147,6 @@ function addUser(uid, email, firstname, lastname){
         // [START authstatelistener]
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
-                window.location = 'index.html';
                 // User is signed in.
                 var displayName = user.displayName;
                 var email = user.email;
@@ -156,7 +164,7 @@ function addUser(uid, email, firstname, lastname){
                 document.getElementById('continue-button').disabled = false;
                 document.getElementById('continue-as').hidden = false;
                 document.getElementById('continue-button').style.display = "initial";
-				document.getElementById('info-bar').hidden = true;
+				        document.getElementById('info-bar').hidden = true;
                 // [END_EXCLUDE]
             } else {
                 // User is signed out.

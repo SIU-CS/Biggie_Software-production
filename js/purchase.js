@@ -57,6 +57,16 @@ function saveToList(event) {
 // Add spot to DB by lot reffrence
 function saveToFB(spotNumber) {
     var inLot = document.getElementById('lot').value.trim();
+
+    var rootRef = firebase.database().ref();
+    var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
+    parkingRef.set({
+      "Lot": inLot,
+      "Spot": spotNumber,
+      "Amount": "120",
+      "PurchaseTime": timeStamp()
+    });
+
     lotsRef.child(inLot).child(spotNumber).set({
         TimeRem: "2:00:00",
         PaidOn: timeStamp()

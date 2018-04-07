@@ -9,14 +9,6 @@ function addUser(uid, email, firstname, lastname){
   var rootRef = firebase.database().ref();
   var userRef = rootRef.child('/USERS_TABLE/' + uid);
 
-  var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
-  parkingRef.set({
-    "Lot": "Null",
-    "Spot": "Null",
-    "PurchaseTime": "Null",
-    "Amount": "Null"
-  });
-
   userRef.set({
     "credits": 0,
     "priviledge": 0, //Normal users 0 and admins are 1

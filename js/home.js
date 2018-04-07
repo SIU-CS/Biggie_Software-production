@@ -12,11 +12,16 @@ firebase.database().ref('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').
 
   amount = minutesToMillis(amount); // Change amount paid for to milliseconds
 
-  var timeLeft = Math.abs(amount - diff); // Get the difference
+  if((amount - diff) < 0){
+    document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + "Time Expired!";
+  }
+  else {
+    var timeLeft = Math.abs(amount - diff); // Get the difference
 
-  timeLeft = millisToMinutesAndSeconds(timeLeft); // Turn to hours minutes and seconds
+    timeLeft = millisToMinutesAndSeconds(timeLeft); // Turn to hours minutes and seconds
 
-  document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + timeLeft;
+    document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + timeLeft;
+  }
 });
 }
 

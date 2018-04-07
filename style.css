@@ -194,6 +194,12 @@
   float: left;
 }
 
+.cardSpotTimeLeft{
+  width: 156px;
+  height: 136px;
+  background-color: #1a2226;
+}
+
 .cardSpotTimeLot{
   text-align: left;
   color: #FFF;

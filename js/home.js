@@ -1,3 +1,6 @@
+getCurrentSpot();
+
+function getCurrentSpot(){
 firebase.database().ref('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').then(function(snapshot) {
 
   var lot = snapshot.val().Lot;
@@ -17,7 +20,7 @@ firebase.database().ref('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').
 
   document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + timeLeft;
 });
-
+}
 
 function minutesToMillis(minutes){
   var seconds = ((minutes * 60000));

@@ -26,6 +26,8 @@
           var lastname = snapshot.val().lastname;
           var profilepicture = snapshot.val().profilepicture;
           document.getElementById('firstname').innerHTML = firstname + " " + lastname;
+
+          getCurrentSpot();
         });
       }
     });

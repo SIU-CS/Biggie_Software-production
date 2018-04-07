@@ -13,7 +13,8 @@ function addUser(uid, email, firstname, lastname){
   parkingRef.set({
     "Lot": "Null",
     "Spot": "Null",
-    "PurchaseTime": "Null"
+    "PurchaseTime": "Null",
+    "Amount": "Null"
   });
 
   userRef.set({

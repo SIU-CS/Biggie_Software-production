@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard - Home</title>
+	<title>Dashboard - Purchase Spot</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
@@ -26,6 +26,38 @@
 			    <div>
 				    <h3>Pay for your parking spot here</h3>
 			    </div>
+                <div style="text-align:center;padding:1em 0;">
+                    <div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
+                        <a href="#" id="homebtn" class="active" data-target="home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
+                        <a href="#" id="purchasebtn" data-target="purchase"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
+                        <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Pay Citation</a>
+                    </div>
+
+                    <div class="main" id="content">
+
+                        <div class="home">
+                            <div class="currentspot">
+                                <div class="cardTitle">
+                                    <div class="cardIcon">
+                                        <p><span class="glyphicon glyphicon-dashboard"></span></p>
+                                    </div>
+                                    <div class="cardText">
+                                        <p id="currentSpot"> Current Spot</p>
+                                    </div>
+                                </div>
+                                <div class="cardBody">
+                                    <div class="cardSpotInformation">
+                                        <div class="cardSpotTimeImage">
+                                        </div>
+                                        <div id="cardSpotTimeLot" class="cardSpotTimeLot">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div id="pay">
                     <form id="credit-card" style="height:475px">
                         <div id="form-head">

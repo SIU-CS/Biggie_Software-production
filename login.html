@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body class="body" height="100%">
 	<div hidden id="info-bar" class="information-bar">
 		Enter an email and password below and either sign in to an existing account or sign up
@@ -26,7 +27,7 @@
 			<div id="tab-1" class="tab-content current">
 				<form>
 					<div class="input-group">
-						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 						<input id="email" type="text" class="form-control" name="email" placeholder="Email">
 					</div>
 					<br>
@@ -36,10 +37,16 @@
 					</div>
 				</form>
 				<br>
-				<button disabled class="btn btn-default" id="quickstart-sign-in" name="signin">Sign In</button>
+				<button disabled class="btn btn-default" type="button" id="quickstart-sign-in" name="signin">Sign In</button>
 			</div>
 			<div id="tab-2" class="tab-content">
 				<form>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="firstname" type="text" class="form-control" name="fname" placeholder="First Name">
+            <input id="lastname" type="text" class="form-control" name="lname" placeholder="Last Name">
+          </div>
+          <br>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 						<input id="signinemail" type="text" class="form-control" name="email" placeholder="Email">
@@ -49,9 +56,9 @@
 						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 						<input id="signinpassword" type="password" class="form-control" name="password" placeholder="Password">
 					</div>
-				</form>
 				<br>
-				<button class="btn btn-default" id="quickstart-sign-up" name="signup">Sign Up</button>
+				<button class="btn btn-default" type="button" id="quickstart-sign-up" name="signup">Sign Up</button>
+      </form>
             </div>
 
             <div><!-- container -->
@@ -76,6 +83,7 @@
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
-<script src="js/firebase_init.js"></script>
+<script src="js/firebase_init_login.js"></script>
+<script src="js/login.js"></script>
 <script src="js/firebase_login.js"></script>
 <script src="js/tabbed_div.js"></script>

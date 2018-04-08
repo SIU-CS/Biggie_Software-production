@@ -1,0 +1,47 @@
+<head>
+		<script type="text/javascript" src="js/purchase.js"></script>
+</head>
+
+<div class="purchase">
+<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=America%2FChicago" width="350" height="140" frameborder="0" seamless></iframe>
+  <div class="container-fluid" style="width: 85%">
+<div>
+<h3> find spot here</h3>
+    <select id="lot" onkeypress="return saveToList(event)">
+      <option value="SIU Lot A">SIU Lot A</option>
+      <option value="SIU Lot B">SIU Lot B</option>
+    </select> 
+    <input type="text" id="spotNumber" placeholder="Enter your spot number" onkeypress="return saveToList(event)" /><br/><br/><br/>
+    <form action="">
+  <input type="radio" name="hours" value="2"> 2 Hours: $1.00<br>
+  <input type="radio" name="hours" value="4"> 4 Hours: $2.00<br>
+  <input type="radio" name="hours" value="6"> 6 Hours: $3.00<br>
+  <input type="radio" name="hours" value="8"> 8 Hours: $4.00
+</form>
+    
+    <button type="button" class="elipseButton" id="save" onclick="return saveToList(event)">Take Spot</button>
+    </div>
+    <div id="lotA">
+      <h4 id="aTitle">Spots Occupied in SIU Lot A</h4>
+        <ol id="lotASpots">
+          <h5>SPOT &nbsp;&nbsp;&nbsp; TIME PAID</h5>
+        </ol>
+
+    </div>
+    <div id="lotB">
+      <h4 id="bTitle">Spots Occupied in SIU Lot B</h4>
+        <ol id="lotBSpots">
+          <h5>SPOT &nbsp;&nbsp;&nbsp; TIME PAID</h5>
+        </ol>
+    </div>
+  </div>
+  <footer>
+        <!-- Copyright-->
+        <div class="footer-copyright py-3 text-center">
+            <div class="container-fluid" style="bottom : 0; position: fixed; left: 0; bottom: 0; width: 100%; text-align: center; padding-bottom: 15px;">
+                Biggie Software © 2018
+            </div>
+        </div>
+        <!--/.Copyright -->
+    </footer>
+</div>

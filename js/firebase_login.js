@@ -1,6 +1,24 @@
      /**
      * Handles the sign in button pddress.
      */
+
+var firebaseRef = firebase.database().ref();
+
+// Function for associating auth user with a table in the db
+function addUser(uid, email, firstname, lastname){
+  var rootRef = firebase.database().ref();
+  var userRef = rootRef.child('/USERS_TABLE/' + uid);
+
+  userRef.set({
+    "credits": 0,
+    "priviledge": 0, //Normal users 0 and admins are 1
+    "firstname": firstname,
+    "lastname": lastname,
+    "email": email,
+    "profile_picture": "img/defaultprofilepicture.png"
+  });
+}
+
     function toggleSignIn() {
         if (firebase.auth().currentUser) {
             // [START signout]
@@ -42,8 +60,20 @@
      * Handles the sign up button press.
      */
     function handleSignUp() {
+        firstname = document.getElementById('firstname').value;
+        lastname = document.getElementById('lastname').value;
         var email = document.getElementById('signinemail').value;
         var password = document.getElementById('signinpassword').value;
+
+        // Error checking
+        if(firstname.length < 1){
+          alert('Please enter a first name.');
+          return;
+        }
+        if(lastname.length < 1){
+          alert('Please enter a last name.');
+          return;
+        }
         if (email.length < 4) {
             alert('Please enter an email address.');
             return;
@@ -67,6 +97,13 @@
             console.log(error);
             // [END_EXCLUDE]
         });
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            addUser(user.uid, user.email, firstname, lastname);
+          }
+        });
+
         // [END createwithemail]
     }
 
@@ -111,6 +148,8 @@
                 var isAnonymous = user.isAnonymous;
                 var uid = user.uid;
                 var providerData = user.providerData;
+
+
                 // [START_EXCLUDE]
                 document.getElementById('quickstart-sign-in').textContent = 'Sign Out';
                 document.getElementById('continue-as').textContent = 'Coninue as ' + email + '?';
@@ -118,7 +157,7 @@
                 document.getElementById('continue-button').disabled = false;
                 document.getElementById('continue-as').hidden = false;
                 document.getElementById('continue-button').style.display = "initial";
-				document.getElementById('info-bar').hidden = true;
+				        document.getElementById('info-bar').hidden = true;
                 // [END_EXCLUDE]
             } else {
                 // User is signed out.

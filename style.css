@@ -285,6 +285,8 @@ table.userTable tfoot .links a{
   text-align: left;
   color: #FFF;
   font-size: 80px;
+  padding-top: 13px;
+  padding-left: 180px;
 }
 
 .purchase{

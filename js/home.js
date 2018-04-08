@@ -18,9 +18,10 @@ firebase.database().ref('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').
   else {
     var timeLeft = Math.abs(amount - diff); // Get the difference
 
-    timeLeft = millisToMinutesAndSeconds(timeLeft); // Turn to hours minutes and seconds
+    formattedtimeLeft = millisToMinutesAndSeconds(timeLeft); // Turn to hours minutes and seconds
 
-    document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + timeLeft;
+    document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + formattedtimeLeft;
+    startTimer(timeLeft, lot, spot);
   }
 });
 }
@@ -35,4 +36,20 @@ function millisToMinutesAndSeconds(millis) {
   var minutes = Math.floor(millis / (1000 * 60) % 60);
   var seconds = ((millis % 60000) / 1000).toFixed(0);
   return hours + ":" + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+}
+
+function expire(){
+  document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + "Time Expired!";
+}
+
+function startTimer(duration, lot, spot) {
+    setInterval(function () {
+        duration -= 1000;
+        newtime = millisToMinutesAndSeconds(duration);
+        document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + newtime;
+
+        if(newtime < 0){
+          expire();
+        }
+    }, 1000);
 }

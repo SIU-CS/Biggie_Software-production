@@ -76,6 +76,112 @@ h1,h3 {
 	float: left;
 }
 
+#pay
+{
+    text-align: left;
+    padding: 20px;
+}
+
+#credit-card {
+    width: 360px;
+    height: 400px;
+    margin: 60px auto 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 1px 2px 3px 0 rgba(0,0,0,.10);
+}
+
+#form-head {
+    height: 60px;
+    padding: 20px 30px 0;
+    border-bottom: 1px solid #e1e8ee;
+}
+ 
+#form-body {
+    height: 340px;
+    padding: 30px 30px 20px;
+}
+
+#card-number,
+#cvv-input input,
+#month select,
+#year select {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 14px;
+    opacity: .7;
+    color: #000;
+}
+
+#card-number,
+#month select,
+#year select {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 14px;
+}
+
+#card-number {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+}
+
+#month select,
+#year select {
+    width: 145px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    background-position: 85% 50%;
+    
+}
+ 
+#month select {
+    float: left;
+}
+ 
+#year select {
+    float: right;
+}
+
+#cvv-input input {
+    float: left;
+    width: 145px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+#paypal,
+#submit-btn {
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    border-color: transparent;
+    border-radius: 6px;
+}
+ 
+#submit-btn {
+    margin-bottom: 10px;
+    background: #7dc855;
+}
+ 
+#paypal a,
+#submit-btn a {
+    text-decoration: none;
+    color: #fff;
+}
+ 
+#paypal {
+    background: no-repeat 65% 56% #009cde;
+}
 
 #save
 {

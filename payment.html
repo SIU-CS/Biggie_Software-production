@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard</title>
+	<title>Dashboard - Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="app.css">
 </head>
 <body>
@@ -15,82 +15,80 @@
 		<img src="img/siu-parking-logo.png" alt="SIU Logo">
 	</div>
 
-	<div
-
-	<div style="text-align:center;padding:1em 0;">
+	<div style="text-align:center; padding:1em 0;">
 		<div class="sidebar" style="font-family: 'Roboto', sans-serif;">
 			<a href="#" class="active"><span class="glyphicon glyphicon-home"></span>    Home</a>
-		  <a href="#"><span class="glyphicon glyphicon-time"></span>    Purchase Spot</a>
-		  <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>    Pay Citation</a>
+		    <a href="#"><span class="glyphicon glyphicon-time"></span>    Purchase Spot</a>
+		    <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>    Pay Citation</a>
 		</div>
 		<div class="main">
-    	<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=America%2FChicago" width="350" height="140" frameborder="0" seamless></iframe>
+    	<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=America%2FChicago" width="350" height="140"
+                frameborder="0" seamless></iframe>
     		<div class="container-fluid" style="width: 85%">
-			<div>
-					<h3>Pay for your parking spot here</h3>
-			</div>
-            <div id="pay">
-                <form id="credit-card">
-                    <div id="form-head">
-                        <h4>Debit/Credit Card</h4>
-                    </div>
-                    
-                    <div id="form-body">
-                    <input id="card-number" type="text" placeholder="1000 1234 5678 9100" maxlength="16">
-                    
-                    <div>
-                        <div id="month">
-                            <select name="Month">
-                                <option value="january">January</option>
-                                <option value="february">February</option>
-                                <option value="march">March</option>
-                                <option value="april">April</option>
-                                <option value="may">May</option>
-                                <option value="june">June</option>
-                                <option value="july">July</option>
-                                <option value="august">August</option>
-                                <option value="september">September</option>
-                                <option value="october">October</option>
-                                <option value="november">November</option>
-                                <option value="december">December</option>
-                            </select>
+			    <div>
+				    <h3>Pay for your parking spot here</h3>
+			    </div>
+                <div id="pay">
+                    <form id="credit-card" style="height:475px">
+                        <div id="form-head">
+                            <h4>Debit/Credit Card</h4>
                         </div>
-                        <div id="year">
-                            <select name="Year">
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="2020">2020</option>
-                                <option value="2021">2021</option>
-                                <option value="2022">2022</option>
-                                <option value="2023">2023</option>
-                                <option value="2024">2024</option>
-                            </select>
+                        <div id="form-body">
+                            <h5>Card Number</h5>
+                            <input id="card-number" type="text" placeholder="1000 1234 5678 9100" maxlength="16">
+                            <div>
+                                <h5>Expiration</h5>
+                                <div id="month">
+                                    <select name="Month">
+                                        <option value="january">1</option>
+                                        <option value="february">2</option>
+                                        <option value="march">3</option>
+                                        <option value="april">4</option>
+                                        <option value="may">5</option>
+                                        <option value="june">6</option>
+                                        <option value="july">7</option>
+                                        <option value="august">8</option>
+                                        <option value="september">9</option>
+                                        <option value="october">10</option>
+                                        <option value="november">11</option>
+                                        <option value="december">12</option>
+                                    </select>
+                                </div>
+                                <div id="year">
+                                    <select name="Year">
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="cvv">
+                                <h5>Security Code</h5>
+                                <div id="cvv-input">
+                                    <input type="text" placeholder="CVV" maxlength="3">
+                                </div>
+                            </div>
+                            <button type="submit" id="submit-btn"><a href="#">Submit</a></button>
+                            <button type="submit" id="paypal"><a href="#">Pay With PayPal</a></button>
                         </div>
-                    </div>
-                
-                    <div id="cvv">
-                        <div id="cvv-input">
-                            <input type="text" placeholder="CVV" maxlength="3">
-                        </div>
-                    </div>
-                     <button type="submit" id="submit-btn"><a href="#">Submit</a></button>
-                     <button type="submit" id="paypal"><a href="#">Pay With PayPal</a></button>
-                    </div>
                     </form>
                 </div>
-               
-	<footer>
-        <!-- Copyright-->
-        <div class="footer-copyright py-3 text-center">
-            <div class="container-fluid" style="bottom : 0; position: fixed; left: 0; bottom: 0; width: 100%;
-            text-align: center; padding-bottom: 15px">
-                Biggie Software © 2018
             </div>
         </div>
-        <!--/.Copyright -->
-    </footer>
+	    <footer>
+            <!-- Copyright-->
+            <div class="footer-copyright py-3 text-center">
+                <div class="container-fluid" style="bottom : 0; position: fixed; left: 0; bottom: 0; width: 100%;
+                text-align: center; padding-bottom: 15px">
+                    Biggie Software © 2018
+                </div>
+            </div>
+            <!--/.Copyright -->
+        </footer>
 	</div>
 </body>
 </html>

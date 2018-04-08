@@ -10,8 +10,15 @@
     <select id="lot" onkeypress="return saveToList(event)">
       <option value="SIU Lot A">SIU Lot A</option>
       <option value="SIU Lot B">SIU Lot B</option>
-    </select>
-    <input type="text" id="spotNumber" placeholder="Enter your spot number" onkeypress="return saveToList(event)" />
+    </select> 
+    <input type="text" id="spotNumber" placeholder="Enter your spot number" onkeypress="return saveToList(event)" /><br/><br/><br/>
+    <form action="">
+  <input type="radio" name="hours" value="2"> 2 Hours: $1.00<br>
+  <input type="radio" name="hours" value="4"> 4 Hours: $2.00<br>
+  <input type="radio" name="hours" value="6"> 6 Hours: $3.00<br>
+  <input type="radio" name="hours" value="8"> 8 Hours: $4.00
+</form>
+    
     <button type="button" class="elipseButton" id="save" onclick="return saveToList(event)">Take Spot</button>
     </div>
     <div id="lotA">

@@ -1,6 +1,4 @@
     // Initialize Firebase
-    var guid = "";
-
     var config = {
         apiKey: "AIzaSyCWsMMBdgP5EfUmXMPRDBjyou8Rj8jzBDA",
         authDomain: "siu-parking-assistant-40a3f.firebaseapp.com",
@@ -11,10 +9,9 @@
     };
     firebase.initializeApp(config);
 
-    // If not logged in then go to login page
     firebase.auth().onAuthStateChanged(user => {
       if(!user) {
-        window.location = 'login.html';
+        window.location = '../login.html';
       }
       else
       // If someone is logged in, get the uid and place infomation
@@ -27,10 +24,14 @@
           var priviledge = snapshot.val().priviledge;
           var profilepicture = snapshot.val().profilepicture;
           document.getElementById('firstname').innerHTML = firstname + " " + lastname;
-          
-          // If user is admin, add a button for admin panel
+
+          // If we are admin, then do this
           if(priviledge === 1){
-            document.getElementById('sidebar').innerHTML += '<a href="admin/index.html"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Admin Panel</a>';
+
+          }
+          else
+          {
+            window.location = '../index.html';
           }
           // Refresh current spot
           getCurrentSpot();

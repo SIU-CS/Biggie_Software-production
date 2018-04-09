@@ -13,8 +13,8 @@
 <body>
     <div class="purchase">
         <iframe src="http://free.timeanddate.com/clock/i66t4n4f/n5373/fs28/fc787878/tct/pct/tt0/tw1/tm1/tb4" frameborder="0" width="244" height="69" allowTransparency="true"></iframe>
-        <hr />
         <div class="container-fluid" style="width: 85%">
+            <hr />
             <div>
                 <h3>Enter your lot and spot number here</h3>
                 <select id="lot" onkeypress="return saveToList(event)">
@@ -84,14 +84,17 @@
                                 <button type="submit" id="paypal"><a href="#">Pay With PayPal</a></button>
                             </div>
                         </form>
-                        <button type="button" class="elipseButton" id="save" onclick="return saveToList(event)">Take Spot</button>
+                        <hr />
+                        <div class="text-center">
+                            <button type="submit" id="submit-btn" onclick="return saveToList(event)" style="color: white; width: 100px">Purchase Spot</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <footer>
+            <footer class="text">
                 <!-- Copyright-->
                 <div class="footer-copyright py-3 text-center">
-                    <div class="container-fluid" style="bottom : 0; position: fixed; left: 0; bottom: 0; width: 100%; text-align: center; padding-bottom: 15px;">
+                    <div class="container-fluid" style="bottom : 0; position: fixed; left: 75px; bottom: 0; width: 100%; text-align: center; padding-bottom: 15px;">
                         Biggie Software © 2018
                     </div>
                 </div>

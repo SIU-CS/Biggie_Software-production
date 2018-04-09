@@ -1,3 +1,8 @@
+.html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #e4e5e6;
@@ -32,7 +37,6 @@ body {
     color: white;
     border-left: 3px solid #b8c7ce;
     padding: 15px 12px 15px 17px;
-
 }
 
 .sidebar a.active {
@@ -49,36 +53,30 @@ h1,h3 {
 	color: #787878;
 }
 
-#spotNumber
-{
+#spotNumber {
 	width: 30%;
 	padding: 9px;
 	font-size: 16px;
 }
 
-#lot
-{
+#lot {
 	width: 30%;
 	padding: 9px;
 	font-size: 16px;
 }
 
-#lotA
-{
+#lotA {
 	text-align: left;
 	float:left;
 	padding-right: 25px;
 }
 
-#lotB
-{
+#lotB {
 	text-align: left;
 	float: left;
 }
 
-
-#save
-{
+#save {
 	width: 10%;
 	padding: 9px;
 	font-size: 16px;
@@ -192,8 +190,7 @@ h1,h3 {
     background: no-repeat 65% 56% #009cde;
 }
 
-#save
-{
+#save {
 	width: 10%;
 	padding: 9px;
 	font-size: 16px;

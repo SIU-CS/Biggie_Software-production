@@ -85,7 +85,7 @@ h1,h3 {
 #credit-card {
     width: 360px;
     height: 400px;
-    margin: 60px auto 0;
+    margin: 0 auto 0;
     border: 1px solid #ddd;
     border-radius: 6px;
     background-color: #fff;

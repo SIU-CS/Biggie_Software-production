@@ -35,6 +35,65 @@
         </ol>
     </div>
   </div>
+  <div>
+                <div class="container-fluid" style="width: 100%">
+                    <div>
+                        <h3>Enter your payment information here</h3>
+                    </div>
+                    <div id="pay">
+                        <form id="credit-card" style="height:400px">
+                            <div id="form-body" style="margin-top: 10px">
+                                <h5>Card Number</h5>
+                                <input id="card-number" type="text" placeholder="1000 1234 5678 9100" maxlength="16">
+                                <div>
+                                    <h5>Expiration</h5>
+                                    <div id="month">
+                                        <select name="Month">
+                                            <option value="january">1</option>
+                                            <option value="february">2</option>
+                                            <option value="march">3</option>
+                                            <option value="april">4</option>
+                                            <option value="may">5</option>
+                                            <option value="june">6</option>
+                                            <option value="july">7</option>
+                                            <option value="august">8</option>
+                                            <option value="september">9</option>
+                                            <option value="october">10</option>
+                                            <option value="november">11</option>
+                                            <option value="december">12</option>
+                                        </select>
+                                    </div>
+                                    <div id="year">
+                                        <select name="Year">
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="cvv">
+                                    <h5>Security Code</h5>
+                                    <div id="cvv-input">
+                                        <input type="text" placeholder="CVV" maxlength="3">
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <h5>or</h5>
+                                <button type="submit" id="paypal"><a href="#">Pay With PayPal</a></button>
+                            </div>
+                        </form>
+                        <hr />
+                        <div class="text-center">
+                            <button type="button" class="elipseButton" id="save" onclick="return saveToList(event)">Take Spot</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
   <footer>
         <!-- Copyright-->
         <div class="footer-copyright py-3 text-center">

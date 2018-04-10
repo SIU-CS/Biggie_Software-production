@@ -92,10 +92,12 @@ h1,h3 {
 
 #pay
 {
+    font-family: 'Roboto Condensed', sans-serif;
     text-align: left;
 }
 
 #credit-card {
+    font-family: 'Roboto Condensed', sans-serif;
     width: 360px;
     height: 400px;
     margin: 0 auto 0;
@@ -154,13 +156,13 @@ h1,h3 {
 
 }
 
-#month select {
-    float: left;
-}
+    #month select {
+        float: left;
+    }
 
-#year select {
-    float: right;
-}
+    #year select {
+        float: right;
+    }
 
 #cvv-input input {
     float: left;
@@ -176,7 +178,7 @@ h1,h3 {
 #submit-btn {
     cursor: pointer;
     font-size: 16px;
-    width: 100%;
+    width: 50%;
     border-color: transparent;
     border-radius: 6px;
 }
@@ -193,6 +195,7 @@ h1,h3 {
 }
 
 #paypal {
+    font-family: 'Roboto Condensed', sans-serif;
     background: no-repeat 65% 56% #009cde;
 }
 

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard</title>
+		<title>Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
@@ -22,39 +22,37 @@
 </head>
 
 <body>
-	<div class="header">
+	<div id="header" class="header">
 		<div class="logo">
 			<img src="img/siu-parking-logo.png" alt="SIU Logo">
 		</div>
 
 		<div onclick="myFunction()" class="accountbar">
 			<div class="profilepicture"><img src="img/defaultprofilepicture.png" alt="profilepicture"></div>
-			<div class="firstname">
-				<div class="firstnametext"><p class="fname" id="firstname"></p></div>
-				<div class="firstnamedropdown"><img id="menudrop" src="img/menudropclosed.png"></div>
-		</div>
-		<div id="myDropdown" class="dropdown-content">
-			<a href="#myacc">My Account</a>
-			<a href="#help">Help</a>
-			<a onClick="doSignOut()" href="#signout">Sign Out</a>
+				<div class="firstname">
+					<div class="firstnametext"><p class="fname" id="firstname"></p></div>
+					<div class="firstnamedropdown"><img id="menudrop" src="img/menudropclosed.png"></div>
+				</div>
+			<div id="myDropdown" class="dropdown-content">
+				<a href="#myacc">My Account</a>
+				<a href="#help">Help</a>
+				<a onClick="doSignOut()" href="#signout">Sign Out</a>
+			</div>
 		</div>
 	</div>
 
 	<div style="text-align:center;padding:1em 0;">
-<<<<<<< HEAD
 		<div class="sidebar" style="font-family: 'Roboto', sans-serif;">
 			<a href="#" class="active"><span class="glyphicon glyphicon-home"></span>    Home</a>
 		  <a href="#"><span class="glyphicon glyphicon-time"></span>    Purchase Spot</a>
 		  <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>    Pay Citation</a>
-=======
 		<div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
 			<a href="#" id="homebtn" class="active" data-target="home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
-		  <a href="#" id="purchasebtn" data-target="purchase"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
+		  <a href="purchase.html"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
 		  <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Pay Citation</a>
->>>>>>> be94a51e8425260c3fb79ddf52823372d28aef1b
 		</div>
-
-			<div class="main" id="content">
+	</div>
+			<div class="main container-fluid" id="content">
 
 				<div class="home">
 				  <div class="currentspot">
@@ -81,5 +79,14 @@
 		</div>
 
 </div>
+<footer>
+	<!-- Copyright-->
+	<div class="footer-copyright py-3 text-center">
+			<div class="container-fluid" style="position: absolute; bottom : 0; left: 0; bottom: 0; width: 100%; text-align: center; padding-bottom: 15px;">
+					Biggie Software © 2018
+			</div>
+	</div>
+	<!--/.Copyright -->
+</footer>
 </body>
 </html>

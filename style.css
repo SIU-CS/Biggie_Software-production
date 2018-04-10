@@ -9,12 +9,15 @@
   width: 100%;
 }
 
+#header {
+  position: fixed;
+}
+
 .header {
     background-color: #600;
     margin:0 auto;
     height: 85px;
     width: 100%;
-    position: fixed;
 }
 
 .header img{

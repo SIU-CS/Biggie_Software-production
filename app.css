@@ -1,3 +1,8 @@
+.html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #e4e5e6;
@@ -32,7 +37,6 @@ body {
     color: white;
     border-left: 3px solid #b8c7ce;
     padding: 15px 12px 15px 17px;
-
 }
 
 .sidebar a.active {
@@ -49,33 +53,30 @@ h1,h3 {
 	color: #787878;
 }
 
-#spotNumber
-{
+#spotNumber {
 	width: 30%;
 	padding: 9px;
 	font-size: 16px;
 }
 
-#lot
-{
+#lot {
 	width: 30%;
 	padding: 9px;
 	font-size: 16px;
 }
 
-#lotA
-{
+#lotA {
 	text-align: left;
 	float:left;
 	padding-right: 25px;
 }
 
-#lotB
-{
+#lotB {
 	text-align: left;
 	float: left;
 }
 
+<<<<<<< HEAD
 #pay
 {
     text-align: left;
@@ -185,14 +186,124 @@ h1,h3 {
 
 #save
 {
+=======
+#save {
+>>>>>>> d516825b20b5ace5a6fdb8ed41ae31ee8ab114dd
 	width: 10%;
 	padding: 9px;
 	font-size: 16px;
-<<<<<<< HEAD
 }
 
 
-=======
-
+#pay
+{
+    text-align: left;
+    padding: 20px;
 }
->>>>>>> f7aebd228726da9841de5c08b2a7d475813c5cb9
+
+#credit-card {
+    width: 360px;
+    height: 400px;
+    margin: 0 auto 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 1px 2px 3px 0 rgba(0,0,0,.10);
+}
+
+#form-head {
+    height: 60px;
+    padding: 20px 30px 0;
+    border-bottom: 1px solid #e1e8ee;
+}
+ 
+#form-body {
+    height: 340px;
+    padding: 30px 30px 20px;
+}
+
+#card-number,
+#cvv-input input,
+#month select,
+#year select {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 14px;
+    opacity: .7;
+    color: #000;
+}
+
+#card-number,
+#month select,
+#year select {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 14px;
+}
+
+#card-number {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+}
+
+#month select,
+#year select {
+    width: 145px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    background-position: 85% 50%;
+    
+}
+ 
+#month select {
+    float: left;
+}
+ 
+#year select {
+    float: right;
+}
+
+#cvv-input input {
+    float: left;
+    width: 145px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+#paypal,
+#submit-btn {
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    border-color: transparent;
+    border-radius: 6px;
+}
+ 
+#submit-btn {
+    margin-bottom: 10px;
+    background: #7dc855;
+}
+ 
+#paypal a,
+#submit-btn a {
+    text-decoration: none;
+    color: #fff;
+}
+ 
+#paypal {
+    background: no-repeat 65% 56% #009cde;
+}
+
+#save {
+	width: 10%;
+	padding: 9px;
+	font-size: 16px;
+}

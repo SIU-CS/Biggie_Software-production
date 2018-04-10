@@ -1,5 +1,6 @@
 var mainText = document.getElementById("mainText");
 var submitButton = document.getElementById("submitButton");
+
 var firebaseRef = firebase.database().ref();
 var lotsRef = firebaseRef.child("Lots");
 var lotARef = lotsRef.child("SIU Lot A/");
@@ -13,7 +14,7 @@ function refreshList() {
     //reset the list every time
     document.getElementById("lotASpots").innerHTML = " ";
     lotARef.once("value").then(function (snapshot) {
-		document.getElementById("lotASpots").innerHTML = " ";
+        document.getElementById("lotASpots").innerHTML = " ";
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
 
@@ -22,13 +23,13 @@ function refreshList() {
             var timeStamp = childSnapshot.val().PaidOn;
             var timerem = childSnapshot.val().TimeRem;
             var li = '<li>' + key + " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + timeStamp + '</li>';
-			document.getElementById('lotASpots').innerHTML += li;
+            document.getElementById('lotASpots').innerHTML += li;
         });
     });
 
-	document.getElementById("lotBSpots").innerHTML = " ";
+    document.getElementById("lotBSpots").innerHTML = " ";
     lotBRef.once("value").then(function (snapshot) {
-		document.getElementById("lotBSpots").innerHTML = " ";
+        document.getElementById("lotBSpots").innerHTML = " ";
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
 
@@ -57,18 +58,21 @@ function saveToList(event) {
 // Add spot to DB by lot reffrence
 function saveToFB(spotNumber) {
     var inLot = document.getElementById('lot').value.trim();
-
+    var hours = document.querySelector('input[name="hours"]:checked').value;
+    
     var rootRef = firebase.database().ref();
     var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
     parkingRef.set({
-      "Lot": inLot,
-      "Spot": spotNumber,
-      "Amount": "120",
-      "PurchaseTime": timeStamp()
+        "Lot": inLot,
+        "Spot": spotNumber,
+        "Amount": "120",
+        "PurchaseTime": timeStamp()
     });
-
+    
     lotsRef.child(inLot).child(spotNumber).set({
-        TimeRem: "2:00:00",
+        
+        
+        TimeRem: (hours + ":00:00"),
         PaidOn: timeStamp()
     });
     refreshList();

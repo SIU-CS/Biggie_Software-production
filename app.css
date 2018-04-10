@@ -24,6 +24,7 @@ body {
   overflow-x: hidden;
   border-right: 1px solid #656565;
   z-index: 2;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,0,.20);
 }
 
 .sidebar a {
@@ -92,7 +93,6 @@ h1,h3 {
 #pay
 {
     text-align: left;
-    padding: 20px;
 }
 
 #credit-card {

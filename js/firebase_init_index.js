@@ -26,8 +26,10 @@
           var lastname = snapshot.val().lastname;
           var priviledge = snapshot.val().priviledge;
           var profilepicture = snapshot.val().profilepicture;
+          var credits = snapshot.val().credits;
           document.getElementById('firstname').innerHTML = firstname + " " + lastname;
-          
+
+
           // If user is admin, add a button for admin panel
           if(priviledge === 1){
             document.getElementById('sidebar').innerHTML += '<a href="admin/index.html"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Admin Panel</a>';

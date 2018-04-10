@@ -37,6 +37,7 @@ function saveToFB(spotNumber) {
         TimeRem: (hours + ":00:00"),
         PaidOn: timeStamp()
     });
+    window.location = "index.html";
     refreshList();
 }
 
@@ -50,6 +51,38 @@ function timeStamp() {
 
     // array with the current hour, minute and second
     var time = [now.getHours(), now.getMinutes(), now.getSeconds()];
+
+    // find AM or PM depending on the hour
+    var suffix = time[0] < 12 ? "AM" : "PM";
+
+    // Convert hour from military time
+    time[0] = time[0] < 12 ? time[0] : time[0] - 12;
+
+    // If hour is 0, set it to 12
+    time[0] = time[0] || 12;
+
+    // If seconds and minutes are less than 10, add a zero
+    for (var i = 1; i < 3; i++) {
+        if (time[i] < 10) {
+            time[i] = "0" + time[i];
+        }
+    }
+
+    // Return the formatted string
+    return date.join("/") + " " + time.join(":") + " " + suffix;
+}
+
+function expireTimeStamp(hours) {
+    // Create a date object with the current time
+    var now = new Date();
+
+    // array with the current month, day and time
+    var date = [now.getMonth() + 1, now.getDate(), now.getFullYear()];
+
+    // array with the current hour, minute and second
+    var time = [now.getHours(), now.getMinutes(), now.getSeconds()];
+
+    time[0] = time[0] + hours;
 
     // find AM or PM depending on the hour
     var suffix = time[0] < 12 ? "AM" : "PM";
@@ -85,12 +118,22 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("formbtns").innerHTML = '<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button><button type="button" id="save" onclick="return saveToList(event)">Continue</button>';
+    document.getElementById("formbtns").innerHTML = '<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button><button type="button" id="nextBtn" onclick="return saveToList(event)">Purchase</button>';
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = "Continue";
   }
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(n)
+}
+
+function getFormInfo(){
+  var inLot = document.getElementById('lot').value.trim();
+  var spotNumber = document.getElementById('spotNumber').value.trim();
+  var hours = document.querySelector('input[name="hours"]:checked').value;
+
+  document.getElementById("form-head").innerHTML = '<h4>Pay with Credits ($' + (hours / 2) + '.00' + ')</h4>';
+  document.getElementById("form-body").innerHTML = '<h5>Lot: ' + inLot + '</h5>' + '<h5>Spot: ' + ' ' + spotNumber + '</h5>' + '<h5>Hours: ' + ' ' + hours + '</h5><br>' + '<h5>Begin Time: ' + ' ' + timeStamp() + '</h5>' + '<h5>Expire Time: '  + expireTimeStamp(hours) + '</h5><br>';
+
 }
 
 function nextPrev(n) {
@@ -106,6 +149,10 @@ function nextPrev(n) {
   if (currentTab >= x.length) {
     // ... the form gets submitted:
     return false;
+  }
+
+  if(currentTab === 1){
+    getFormInfo();
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);

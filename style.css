@@ -18,6 +18,8 @@
     margin:0 auto;
     height: 85px;
     width: 100%;
+    z-index: 2;
+    box-shadow: 1px 5px 5px 0 rgba(0,0,0,.20);
 }
 
 .header img{

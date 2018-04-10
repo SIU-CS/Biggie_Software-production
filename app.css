@@ -21,6 +21,8 @@ body {
     font-family: 'Anonymous Pro', monospace;
     overflow-x: hidden;
     border-right: 1px solid #656565;
+    z-index: 2;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,.20);
 }
 
     .sidebar a {

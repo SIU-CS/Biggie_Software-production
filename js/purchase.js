@@ -7,42 +7,6 @@ var lotARef = lotsRef.child("SIU Lot A/");
 var lotBRef = lotsRef.child("SIU Lot B/");
 var spot;
 
-refreshList();
-// Get data from Firebase DB
-// Generates a simple HTML list from key value of each lot that is occupied
-function refreshList() {
-    //reset the list every time
-    document.getElementById("lotASpots").innerHTML = " ";
-    lotARef.once("value").then(function (snapshot) {
-        document.getElementById("lotASpots").innerHTML = " ";
-        snapshot.forEach(function (childSnapshot) {
-            var key = childSnapshot.key;
-
-            //get data for each element in the db
-            var childData = childSnapshot.val();
-            var timeStamp = childSnapshot.val().PaidOn;
-            var timerem = childSnapshot.val().TimeRem;
-            var li = '<li>' + key + " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + timeStamp + '</li>';
-            document.getElementById('lotASpots').innerHTML += li;
-        });
-    });
-
-    document.getElementById("lotBSpots").innerHTML = " ";
-    lotBRef.once("value").then(function (snapshot) {
-        document.getElementById("lotBSpots").innerHTML = " ";
-        snapshot.forEach(function (childSnapshot) {
-            var key = childSnapshot.key;
-
-            //get data for each element in the db
-            var childData = childSnapshot.val();
-            var timeStamp = childSnapshot.val().PaidOn;
-            var timerem = childSnapshot.val().TimeRem;
-            var li = '<li>' + key + " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + timeStamp + '</li>';
-            document.getElementById('lotBSpots').innerHTML += li;
-        });
-    });
-}
-
 // function to populate html list every time new spot is taken
 function saveToList(event) {
     if (event.which == 13 || event.keyCode == 13 || event.which == 1) { // as the user presses the enter key, we will attempt to save the data
@@ -59,7 +23,7 @@ function saveToList(event) {
 function saveToFB(spotNumber) {
     var inLot = document.getElementById('lot').value.trim();
     var hours = document.querySelector('input[name="hours"]:checked').value;
-    
+
     var rootRef = firebase.database().ref();
     var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
     parkingRef.set({
@@ -68,10 +32,8 @@ function saveToFB(spotNumber) {
         "Amount": hours * 60,
         "PurchaseTime": timeStamp()
     });
-    
+
     lotsRef.child(inLot).child(spotNumber).set({
-        
-        
         TimeRem: (hours + ":00:00"),
         PaidOn: timeStamp()
     });
@@ -107,4 +69,76 @@ function timeStamp() {
 
     // Return the formatted string
     return date.join("/") + " " + time.join(":") + " " + suffix;
+}
+
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the crurrent tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("formbtns").innerHTML = '<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button><button type="button" id="save" onclick="return saveToList(event)">Continue</button>';
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
 }

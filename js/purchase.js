@@ -75,14 +75,12 @@ function timeStamp() {
 function expireTimeStamp(hours) {
     // Create a date object with the current time
     var now = new Date();
-
+    now.setTime(now.getTime()+ (hours * 60*60*1000));
     // array with the current month, day and time
     var date = [now.getMonth() + 1, now.getDate(), now.getFullYear()];
 
     // array with the current hour, minute and second
-    var time = [now.getHours(), now.getMinutes(), now.getSeconds()];
-
-    time[0] = time[0] + hours;
+    var time = [now.getHours() , now.getMinutes(), now.getSeconds()];
 
     // find AM or PM depending on the hour
     var suffix = time[0] < 12 ? "AM" : "PM";

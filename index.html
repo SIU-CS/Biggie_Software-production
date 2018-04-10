@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard - Home</title>
+    <title>Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
@@ -20,7 +20,6 @@
     <script type="text/javascript" src="js/home.js"></script>
     <script type="text/javascript" src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
 </head>
-
 <body>
     <div id="header" class="header">
         <div class="logo">
@@ -43,50 +42,44 @@
 
     <div clas="text-center" style="text-align:center;padding:1em 0;">
         <div class="sidebar" style="font-family: 'Roboto', sans-serif;">
-            <a href="#" class="active"><span class="glyphicon glyphicon-home"></span>    Home</a>
-            <a href="#"><span class="glyphicon glyphicon-time"></span>    Purchase Spot</a>
-            <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>    Pay Citation</a>
             <div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
                 <a href="#" id="homebtn" class="active" data-target="home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
                 <a href="purchase.html"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
-                <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox"><span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Pay Citation</a>
-            </div>
-        </div>
-        <div class="main container-fluid text-center" id="content">
-
-            <div class="home">
-                <div class="currentspot">
-                    <div class="cardTitle">
-                        <div class="cardIcon">
-                            <p><span class="glyphicon glyphicon-dashboard"></span></p>
-                        </div>
-                        <div class="cardText">
-                            <p id="currentSpot"> Current Spot</p>
-                        </div>
-                    </div>
-                    <div class="cardBody">
-                        <div class="cardSpotInformation">
-                            <div class="cardSpotTimeImage">
-                            </div>
-                            <div id="cardSpotTimeLot" class="cardSpotTimeLot">
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <footer>
-                    <!-- Copyright-->
-                    <div class="footer-copyright py-3 text-center">
-                        <div class="container-fluid" style="position: static; bottom : 0; left: 0; bottom: 0; width: 100%; text-align: center; padding-bottom: 20px; margin-top: 40%">
-                            Biggie Software © 2018
-                        </div>
-                    </div>
-                    <!--/.Copyright -->
-                </footer>
+                <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox" target="_blank"><span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Pay Citation</a>
             </div>
         </div>
     </div>
+    <div class="main container-fluid text-center" id="content">
 
+        <div class="home">
+            <div class="currentspot">
+                <div class="cardTitle">
+                    <div class="cardIcon">
+                        <p><span class="glyphicon glyphicon-dashboard"></span></p>
+                    </div>
+                    <div class="cardText">
+                        <p id="currentSpot"> Current Spot</p>
+                    </div>
+                </div>
+                <div class="cardBody">
+                    <div class="cardSpotInformation">
+                        <div class="cardSpotTimeImage">
+                        </div>
+                        <div id="cardSpotTimeLot" class="cardSpotTimeLot">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <footer>
+                <div class="footer-copyright py-3 text-center">
+                    <div class="container-fluid" style="position: static; bottom : 0; left: 0; bottom: 0; width: 100%; text-align: center; padding-bottom: 20px; margin-top: 40%">
+                        Biggie Software © 2018
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
 </body>
 </html>

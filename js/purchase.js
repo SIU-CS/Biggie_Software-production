@@ -65,7 +65,7 @@ function saveToFB(spotNumber) {
     parkingRef.set({
         "Lot": inLot,
         "Spot": spotNumber,
-        "Amount": "120",
+        "Amount": hours * 60,
         "PurchaseTime": timeStamp()
     });
     

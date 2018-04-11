@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Passion+One|Roboto+Condensed');
+
+html, body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #e4e5e6;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.content {
+    min-height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(0deg,rgba(0, 0, 0, 0.9),rgba(0,0,0,0.4)), url(img/campus.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+    position: fixed;
+    width: 100%;
+}
+
+.container {
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10%;
+}
+  
+.container img {
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 30px;
+}
+
+.information-bar {
+    text-align: center;
+    background-color: #f1f1f1;
+    font-size: large;
+    padding: 10px;
+}
+
+.tab-content {
+    display: none;
+    background: #660000;
+    padding: 15px;
+    border-radius: 0 0 15px 15px;
+}
+
+.tab-content.current{
+	display: inherit;
+}
+
+ul.tabs {
+    margin: 0;
+    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    background-color: #600;
+    list-style: none;
+    white-space: nowrap;
+    color: #A9A9A9;
+}
+ul.tabs li {
+  width: 50%;
+  background: #560000;
+	display: inline-block;
+	padding: 10px 5px;
+	cursor: pointer;
+}
+
+ul.tabs li.current {
+    width: 50%;
+    background: #660000;
+    display: inline-block;
+	color: white;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height:50px;
+    margin-left:200px;
+}

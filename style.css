@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Passion+One|Roboto+Condensed');
 
-.html{
-  height: 100%;
+.html {
+	height: 100%;
 	width: 100%;
 }
 
-.body{
+.body {
   font-family: 'Roboto Condensed', sans-serif;
   background-color: #e4e5e6;
   height: 100%;

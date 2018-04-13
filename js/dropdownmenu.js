@@ -20,7 +20,7 @@ function doSignOut(){
 window.onclick = function(event) {
   console.log(event.target);
   if (document.getElementsByClassName('myDropdown')[0].contains(event.target)){
-    document.getElementById("myDropdown").classList.remove("show");
+    document.getElementById('myDropdown').classList.remove("show");
     document.getElementById('menudrop').src='img/menudropclosed.png';
     }
   }

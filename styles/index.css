@@ -10,7 +10,7 @@ html, body {
     margin: 0 auto;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(0deg,rgba(0, 0, 0, 0.9),rgba(0,0,0,0.4)), url(img/campus.jpg) no-repeat center;
+    background: linear-gradient(0deg,rgba(0, 0, 0, 0.9),rgba(0,0,0,0.4)), url(../img/campus.jpg) no-repeat center;
     background-size: cover;
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow: inset 0 0 10px #000000;
@@ -85,7 +85,7 @@ html, body {
 .cardSpotTimeImage{
   width: 156px;
   height: 136px;
-  background: #1a2226 url("img/clock_image.png");
+  background: #1a2226 url("../img/clock_image.png");
   background-repeat: no-repeat;
   background-position: center;
   float: left;

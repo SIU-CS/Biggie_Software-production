@@ -1,12 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>Dashboard - Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-    <link rel="stylesheet" type="text/css" href="styles/index.css"/>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="styles/index.css" />
 </head>
+
 <body>
     <div id="header" class="header"></div>
     <div class="main container-fluid" id="content">
@@ -14,7 +16,9 @@
             <div class="currentspot" style="width: 90%">
                 <div class="cardTitle">
                     <div class="cardIcon">
-                        <p><span class="glyphicon glyphicon-dashboard"></span></p>
+                        <p>
+                            <span class="glyphicon glyphicon-dashboard"></span>
+                        </p>
                     </div>
                     <div class="cardText">
                         <p id="currentSpot"> Current Spot</p>
@@ -32,6 +36,7 @@
         </div>
     </div>
 </body>
+
 </html>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
@@ -42,7 +47,7 @@
 <script type="text/javascript" src="js/firebase_init_index.js"></script>
 <script type="text/javascript" src="js/home.js"></script>
 <script> 
-    $(function(){
-      $("#header").load("header-sidebar.html"); 
+    $(function () {
+        $("#header").load("header-sidebar.html");
     });
-</script> 
+</script>

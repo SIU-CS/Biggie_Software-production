@@ -11,9 +11,10 @@ firebase.database().ref('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').
   var diff = Math.abs(d1-d2); // Minus those
 
   amount = minutesToMillis(amount); // Change amount paid for to milliseconds
-
+    //spot.remove();
   if((amount - diff) < 0){
     document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + "Time Expired!";
+      
   }
   else {
     var timeLeft = Math.abs(amount - diff); // Get the difference

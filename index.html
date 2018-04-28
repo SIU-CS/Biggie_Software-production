@@ -30,9 +30,18 @@
         </div>
     </div>
 
-    <div class="text-center">
-        <div class="sidebar" style="font-family: 'Roboto', sans-serif;">
+    <div id="textcenter" class="text-center">
+      <div class="mobile-menu">
+        <div class="mobile-button"  onclick="openMenu()">
+          <span class="glyphicon glyphicon-menu-hamburger" style="color: white;"></span>
+        </div>
+        <div class="menu-account">
+
+        </div>
+      </div>
+        <div id="sidebarMenu" class="sidebar" style="font-family: 'Roboto', sans-serif;">
             <div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
+                <a href="#" id="closemenu" class="close-menu" data-target="home" style="display: none;"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
                 <a href="#" id="homebtn" class="active" data-target="home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
                 <a href="purchase.html"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
                 <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox" target="_blank"><span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Pay Citation</a>
@@ -80,5 +89,6 @@
 <script src="js/firebase_init_index.js"></script>
 <script src="js/dropdownmenu.js"></script>
 <script src="js/dashboard.js"></script>
+<script src="js/mobile_sidebar.js"></script>
 <script type="text/javascript" src="js/home.js"></script>
 <script type="text/javascript" src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>

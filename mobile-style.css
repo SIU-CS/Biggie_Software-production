@@ -35,9 +35,33 @@
   float: left;
 }
 
+.mobile-menu{
+  padding-top: 85px;
+  background-color: #2c3b41;
+  visibility: visible;
+  height: 125px;
+}
+
+.mobile-button{
+  font-size: 25px;
+  height: 40px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 10px;
+  float: left;
+}
+
+.menu-account{
+  width: 100%;
+}
+
+.close-menu{
+  display: inline;
+}
+
 .sidebar {
-  max-height: 0;
-  max-width: 0;
+  height: 100%;
+  width: 160px;
   position: fixed;
   z-index: 150;
   top: 85px;
@@ -49,9 +73,27 @@
   border-right: 1px solid #656565;
   z-index: 2;
   box-shadow: 1px 1px 5px 0 rgba(0,0,0,.20);
+  display: none;
 }
 
-.sidebar a {
+.sidebarOpen {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 150;
+  top: 85px;
+  left: 0px;
+  background-color: #2c3b41;
+  color: #4b646f;
+  font-family: 'Anonymous Pro', monospace;
+  overflow-x: hidden;
+  border-right: 1px solid #656565;
+  z-index: 2;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,0,.20);
+  display: inline;
+}
+
+.sidebarOpen a {
   background-color: #2c3b41;
   color: #b8c7ce;
   display: block;
@@ -60,21 +102,21 @@
   text-align: left;
 }
 
-.sidebar a:hover {
+.sidebarOpen a:hover {
     background-color: #1a2226;
     color: white;
     border-left: 3px solid #b8c7ce;
     padding: 15px 12px 15px 17px;
 }
 
-.sidebar a.active {
+.sidebarOpen a.active {
     background-color: #1a2226;
     color: white;
 }
 
 .main{
   padding-left: 0px;
-  padding-top: 10px;
+  padding-top: 0px;
 }
 
 .container-fluid {
@@ -92,7 +134,13 @@
 
 .text-center{
   text-align:center;
-  padding: 41px 0 0 0;
+  padding: 0 0 0 0;
+}
+
+.text-center-open{
+  text-align: center;
+  padding: 0 0 0 0;
+  margin-left: 160px;
 }
 
 

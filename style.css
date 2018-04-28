@@ -158,6 +158,11 @@
   padding-left: 160px;
 }
 
+.mobile-menu{
+  background-color: #000;
+  visibility: hidden;
+}
+
 .users{
   margin-top: 85px;
 }

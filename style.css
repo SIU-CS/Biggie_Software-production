@@ -154,7 +154,8 @@
 }
 
 .home{
-  margin-top: 85px;
+  margin-top: 65px;
+  padding-left: 160px;
 }
 
 .users{
@@ -375,6 +376,11 @@ table.spotsTable tfoot .links a{
 
 body {
   background-color: #f1f1f1;
+}
+
+.text-center{
+  text-align:center;
+  padding:1em 0;
 }
 
 #regForm {

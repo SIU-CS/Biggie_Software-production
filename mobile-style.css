@@ -35,12 +35,64 @@
   float: left;
 }
 
+.sidebar {
+  max-height: 0;
+  max-width: 0;
+  position: fixed;
+  z-index: 150;
+  top: 85px;
+  left: 0px;
+  background-color: #2c3b41;
+  color: #4b646f;
+  font-family: 'Anonymous Pro', monospace;
+  overflow-x: hidden;
+  border-right: 1px solid #656565;
+  z-index: 2;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,0,.20);
+}
+
+.sidebar a {
+  background-color: #2c3b41;
+  color: #b8c7ce;
+  display: block;
+  padding: 15px 12px 15px 20px;
+  text-decoration: none;
+  text-align: left;
+}
+
+.sidebar a:hover {
+    background-color: #1a2226;
+    color: white;
+    border-left: 3px solid #b8c7ce;
+    padding: 15px 12px 15px 17px;
+}
+
+.sidebar a.active {
+    background-color: #1a2226;
+    color: white;
+}
+
+.main{
+  padding-left: 0px;
+  padding-top: 10px;
+}
+
+.container-fluid {
+  padding-right: 0px;
+}
+
 .accountbar{
+  visibility: hidden;
   float: right;
   margin-right: 30px;
   margin-top: 30px;
   color: #FFF;
   cursor: pointer;
+}
+
+.text-center{
+  text-align:center;
+  padding: 41px 0 0 0;
 }
 
 
@@ -154,7 +206,8 @@
 }
 
 .home{
-  margin-top: 85px;
+  margin-top: 10px;
+  padding-left: 0px;
 }
 
 .users{
@@ -338,14 +391,14 @@ table.spotsTable tfoot .links a{
 
 .cardSpotInformation{
   background-color: #2c3b41;
-  height: 138px;
+  height: 72px;
   border: 1px solid #c2cfd6;
 }
 
 .cardSpotTimeImage{
-  width: 156px;
-  height: 136px;
-  background: #1a2226 url("img/clock_image.png");
+  width: 80px;
+  height: 70px;
+  background: #1a2226 url("img/clock_image_mobile.png");
   background-repeat: no-repeat;
   background-position: center;
   float: left;
@@ -360,9 +413,9 @@ table.spotsTable tfoot .links a{
 .cardSpotTimeLot{
   text-align: left;
   color: #FFF;
-  font-size: 5vw;
+  font-size: 14px;
   padding-top: 28px;
-  padding-left: 180px;
+  padding-left: 85px;
 }
 
 .purchase{

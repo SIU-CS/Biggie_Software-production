@@ -22,7 +22,7 @@
     height: 85px;
     width: 100%;
     z-index: 150;
-    box-shadow: 1px 5px 5px 0 rgba(0,0,0,.20);
+    box-shadow: 0px 0px 0px 0 rgba(0,0,0,0);
 }
 
 .header img{
@@ -40,6 +40,7 @@
   background-color: #2c3b41;
   visibility: visible;
   height: 125px;
+  box-shadow: 1px 5px 5px 0 rgba(0,0,0,.20);
 }
 
 .mobile-button{

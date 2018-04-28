@@ -336,6 +336,11 @@ table.spotsTable tfoot .links a{
  padding: 10px;
 }
 
+.cardBodyPurchase{
+ background-color: #FFF;
+ padding: 10px;
+}
+
 .cardBodyFull{
  background-color: #FFF;
  height: 100%;
@@ -612,6 +617,12 @@ textarea {
 	outline: none;
 	width: 100%;
 	resize: none;
+}
+
+.paymentbtns{
+  overflow:auto;
+  padding-top: 10px;
+  padding-right: 17px;
 }
 
 .elipseButton {

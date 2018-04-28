@@ -80,7 +80,7 @@
                             <p id="currentSpot"> Purchase Spot</p>
                         </div>
                     </div>
-                    <div class="cardBody">
+                    <div class="cardBodyPurchase">
 
                         <form id="regForm">
                             <div class="tab">
@@ -192,10 +192,10 @@
                                 </div>
                             </div>
 
-                            <div style="overflow:auto; padding-top: 10px; padding-right: 17px;">
-                                <div id="formbtns" style="float:right;">
+                            <div class="paymentbtns">
+                                <div id="formbtns" class="formbtns" style="float:right;">
                                     <button type="button" id="prevBtn" onclick="nextPrev(-1)" style="font-family: 'Roboto Condensed', sans-serif;">Previous</button>
-                                    <button type="button" id="nextBtn" onclick="nextPrev(1)" style="font-family: 'Roboto Condensed', sans-serif;">Next</button>
+                                    <button type="button" id="nextBtn" class="continue" onclick="nextPrev(1)" style="font-family: 'Roboto Condensed', sans-serif;">Next</button>
                                 </div>
                             </div>
                             <!-- Circles which indicates the steps of the form: -->
@@ -210,13 +210,6 @@
                 </div>
 
             </div>
-            <footer>
-                <div class="footer" style="color: black">
-                    <div>
-                        Biggie Software © 2018
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
 </body>

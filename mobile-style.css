@@ -7,7 +7,7 @@
 
 .body{
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: #e4e5e6;
+  background-color: #FFF;
   height: 100%;
   width: 100%;
 }
@@ -23,6 +23,7 @@
     width: 100%;
     z-index: 150;
     box-shadow: 0px 0px 0px 0 rgba(0,0,0,0);
+    border-bottom: 1px solid #4a1717;
 }
 
 .header img{
@@ -255,7 +256,7 @@
 }
 
 .home{
-  margin-top: 5px;
+  margin-top: 0px;
   padding-left: 0px;
 }
 
@@ -403,8 +404,8 @@ table.spotsTable tfoot .links a{
 
 .currentspot{
   margin: 0 auto;
-  width: 97%;
-  border: 1px solid #c2cfd6;
+  width: 100%;
+  border: 0px solid #c2cfd6;
   height: 100%;
 }
 
@@ -476,7 +477,7 @@ table.spotsTable tfoot .links a{
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: #FFF;
 }
 
 #regForm {

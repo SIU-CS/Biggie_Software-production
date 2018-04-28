@@ -258,6 +258,7 @@
 .home{
   margin-top: 0px;
   padding-left: 0px;
+  min-width: 300px;
 }
 
 .users{
@@ -725,8 +726,8 @@ textarea {
 .paymentbtns{
   overflow:auto;
   padding-top: 10px;
-  padding-right: 27px;
-  padding-left: 27px;
+  padding-right: 17px;
+  padding-left: 17px;
 }
 
 .formbtns{

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="mobile-style.css" />
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
@@ -17,6 +18,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/firebase_init_index.js"></script>
     <script src="js/dropdownmenu.js"></script>
+    <script src="js/mobile_sidebar.js"></script>
     <script src="js/dashboard.js"></script>
     <script type="text/javascript" src="js/home.js"></script>
     <script type="text/javascript" src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
@@ -46,8 +48,17 @@
             </div>
         </div>
     </div>
-    <div style="text-align:center;padding:1em 0;">
-        <div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
+    <div id="textcenter" class="text-center">
+      <div class="mobile-menu">
+        <div class="mobile-button"  onclick="openMenu()">
+          <span class="glyphicon glyphicon-menu-hamburger" style="color: white;"></span>
+        </div>
+        <div class="menu-account">
+
+        </div>
+      </div>
+      <div id="sidebarMenu" class="sidebar" style="font-family: 'Roboto', sans-serif;">
+          <div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
             <a href="index.html">
                 <span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
             <a href="purchase.html" class="active">
@@ -55,6 +66,7 @@
             <a href="https://siuparking.t2hosted.com/Account/Portal/#citationSearchBox" target="_blank">
                 <span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Pay Citation</a>
         </div>
+      </div>
         <div class="main container-fluid" id="content">
             <div class="purchase">
                 <div class="currentspot">

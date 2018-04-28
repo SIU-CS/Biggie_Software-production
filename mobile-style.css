@@ -80,7 +80,7 @@
 
 .sidebarOpen {
   height: 100%;
-  width: 160px;
+  width: 0px;
   position: fixed;
   z-index: 150;
   top: 85px;
@@ -93,6 +93,7 @@
   z-index: 2;
   box-shadow: 1px 1px 5px 0 rgba(0,0,0,.20);
   display: inline;
+  white-space: nowrap;
 }
 
 .sidebarOpen a {

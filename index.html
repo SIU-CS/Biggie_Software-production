@@ -1,5 +1,6 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
     <title>Dashboard</title>
     <meta charset="utf-8">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="mobile-style.css" />
 </head>
+
 <body>
     <div id="header" class="header">
         <div class="logo">
@@ -19,7 +21,9 @@
         <div onclick="myFunction()" class="accountbar">
             <div class="profilepicture"><img src="img/defaultprofilepicture.png" alt="profilepicture"></div>
             <div class="firstname">
-                <div class="firstnametext"><p class="fname" id="firstname"></p></div>
+                <div class="firstnametext">
+                    <p class="fname" id="firstname"></p>
+                </div>
                 <div class="firstnamedropdown"><img id="menudrop" src="img/menudropclosed.png"></div>
             </div>
             <div id="myDropdown" class="dropdown-content">
@@ -31,56 +35,66 @@
     </div>
 
     <div id="textcenter" class="text-center">
-      <div class="mobile-menu">
-        <div class="mobile-button"  onclick="openMenu()">
-          <span class="glyphicon glyphicon-menu-hamburger" style="color: #f0f3f5;"></span>
+        <div class="mobile-menu">
+            <div class="mobile-button" onclick="openMenu()">
+                <span class="glyphicon glyphicon-menu-hamburger" style="color: #f0f3f5;"></span>
+            </div>
         </div>
-      </div>
 
         <div id="sidebarMenu" class="sidebar" style="font-family: 'Roboto', sans-serif;">
             <div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
-              <div class="menu-account">
-                <div class="menuprofilepicture"><img src="img/defaultprofilepicture.png" alt="profilepicture"></div>
-                <div class="menufirstname">
+                <div class="menu-account">
+                    <div class="menuprofilepicture"><img src="img/defaultprofilepicture.png" alt="profilepicture"></div>
+                    <div class="menufirstname">
 
-                    <div class="menufirstnametext"><p class="fname" id="firstnamemenu"></p></div>
-                    <div class="menu-credits">
-                      <div id="menucredits" class="credits-text"><p>Credits:</p></div>
+                        <div class="menufirstnametext">
+                            <p class="fname" id="firstnamemenu"></p>
+                        </div>
+                        <div class="menu-credits">
+                            <div id="menucredits" class="credits-text">
+                                <p>Credits:</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-              </div>
                 <a href="#" id="homebtn" class="active" data-target="home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
                 <a href="purchase.html"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
                 <a href="credits.html"><span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Add Credits</a>
             </div>
         </div>
 
-    <div class="main container-fluid" id="content">
+        <div class="main container-fluid" id="content">
 
-        <div class="home">
-            <div class="currentspot">
-                <div class="cardTitle">
-                    <div class="cardIcon">
-                        <p><span class="glyphicon glyphicon-dashboard"></span></p>
-                    </div>
-                    <div class="cardText">
-                        <p id="currentSpot"> Current Spots</p>
-                    </div>
-                </div>
-                <div class="cardBody">
-                    <div class="cardSpotInformation">
-                        <div class="cardSpotTimeImage">
+            <div class="home">
+                <div class="currentspot">
+                    <div class="cardTitle">
+                        <div class="cardIcon">
+                            <p><span class="glyphicon glyphicon-dashboard"></span></p>
                         </div>
-                        <div id="cardSpotTimeLot" class="cardSpotTimeLot">
+                        <div class="cardText">
+                            <p id="currentSpot"> Current Spots</p>
+                        </div>
+                    </div>
+                    <div class="cardBody">
+                        <div class="cardSpotInformation">
+                            <div class="cardSpotTimeImage">
+                            </div>
+                            <div id="cardSpotTimeLot" class="cardSpotTimeLot">
 
+                            </div>
                         </div>
+                    </div>
+                    <div class="addTimeToSpot">
+
+                        <a href="addTime.html" class="addTimeBtn"><button>Add time to spot</button></a>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-  </div>
 </body>
+
 </html>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>

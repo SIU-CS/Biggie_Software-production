@@ -86,16 +86,16 @@
                             <p id="currentSpot"> Purchase Spot</p>
                         </div>
                     </div>
-                    <div class="cardBodyPurchase">
+                    <div id="cardBody" class="cardBodyPurchase">
                         <form id="regForm">
                             <div class="tab">
                                 <p>Choose lot and spot</p>
                                 <div class="pickspot">
-                                    <select id="lot" onkeypress="return saveToList(event)">
+                                    <select id="lot">
                                         <option value="SIU Lot A">SIU Lot A</option>
                                         <option value="SIU Lot B">SIU Lot B</option>
                                     </select>
-                                    <input type="text" id="spotNumber" placeholder="Enter spot number" onkeypress="return saveToList(event)" />
+                                    <input type="text" id="spotNumber" placeholder="Enter spot number"/>
                                 </div>
                                 <p>Choose amout of time</p>
                                 <div class="amountoftime" style="padding:10px">
@@ -150,7 +150,7 @@
                                 </div>
                             </div>
                             <!-- Circles which indicates the steps of the form: -->
-                            <div style="text-align:center;margin-top:40px;">
+                            <div id="circles" style="text-align:center;margin-top:40px;">
                                 <span class="step"></span>
                                 <span class="step"></span>
                             </div>

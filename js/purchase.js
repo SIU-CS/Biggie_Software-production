@@ -30,11 +30,17 @@ function saveToList(event) {
       }
     }
     else {
-
+      document.getElementById("cardBody").innerHTML = '<p>You do not have enough credits!</p>';
+      document.getElementById("circles").innerHTML = '';
+      document.getElementById("formbtns").innerHTML = '<button type="button" id="nextBtn" class="continue" onclick="goBack()">Go Back</button>';
+      document.getElementById("prevBtn").style.display = "none";
     }
     });
 }
 
+function goBack(){
+  window.location = "purchase.html";
+}
 // Add spot to DB by lot reffrence
 function saveToFB(spotNumber) {
     var inLot = document.getElementById('lot').value.trim();

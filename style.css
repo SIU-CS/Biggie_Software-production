@@ -557,7 +557,7 @@ button:hover {
     z-index:90;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 18px;
-    line-height: 55px;
+    line-height: 25px;
 }
 
 .amt-time label.right{
@@ -605,7 +605,7 @@ button:hover {
     z-index:90;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 18px;
-    line-height: 55px;
+    line-height: 0px;
 }
 
 .amt-credit label.right{

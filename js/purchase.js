@@ -127,14 +127,19 @@ function showTab(n) {
   x[n].style.display = "block";
   //... and fix the Previous/Next buttons:
   if (n == 0) {
+    console.log("1");
     document.getElementById("prevBtn").style.display = "none";
   } else {
+    console.log("2");
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("formbtns").innerHTML = '<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button><button type="button" id="nextBtn" onclick="return saveToList(event)">Purchase</button>';
+    console.log("3");
+    document.getElementById("formbtns").innerHTML = '<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button><button type="button" id="nextBtn" class="continue" onclick="return saveToList(event)">Purchase</button>';
   } else {
-    document.getElementById("nextBtn").innerHTML = "Continue";
+    console.log("4");
+    document.getElementById("formbtns").innerHTML = '<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button><button type="button" id="nextBtn" class="continue" onclick="nextPrev(1)">Next</button>';
+    document.getElementById("prevBtn").style.display = "none";
   }
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(n)

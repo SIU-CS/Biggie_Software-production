@@ -593,7 +593,9 @@ button:hover {
 }
 
 #prevBtn {
+  width: 100%;
   background-color: #bbbbbb;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /* Make circles that indicate the steps of the form: */
@@ -682,6 +684,18 @@ button:hover {
 
 .amt-time input[type="radio"]:checked + label {
     background: #C2CFD6;
+}
+
+.amt-time label {
+     padding:5px;
+     border-top:1px solid #CCC;
+     border-left:1px solid #CCC;
+     border-bottom:1px solid #CCC;
+     cursor:pointer;
+    z-index:90;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    line-height: 25px;
 }
 
 .amt-credit label {
@@ -790,10 +804,12 @@ textarea {
 
 .formbtns{
   width: 100%;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .continue{
   width: 100%;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 #spotNumber {

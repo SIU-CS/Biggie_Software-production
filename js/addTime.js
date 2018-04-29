@@ -1,7 +1,6 @@
-window.onload = function() {
-    firebase.database().ref('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').then(function (snapshot) {
-        var spot = snapshot.val().Spot;
 
-        document.getElementById('spotNumber').textContent = spot;
-    });
+function removeAddBtn() {
+    window.alert("sometext");
+    document.getElementsByClassName("addTimeToSpot").style.display = 'none';
 }
+    

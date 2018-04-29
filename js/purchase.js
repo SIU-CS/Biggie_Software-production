@@ -210,7 +210,7 @@ function fixStepIndicator(n) {
 }
 
 function addCredits(){
-  var newCredits = 12;
+  var newCredits = 0;
 
   var creditsVal = document.querySelector('input[name="credits"]:checked').value;
 
@@ -223,6 +223,6 @@ function addCredits(){
       creditsRef.update({
           "credits": newCredits
       });
-
+      document.getElementById("cardBody").innerHTML = '<p>Payment Successful!</p>';
     });
 }

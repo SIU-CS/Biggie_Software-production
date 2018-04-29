@@ -87,7 +87,7 @@
                             <p id="currentSpot"> Add Credits</p>
                         </div>
                     </div>
-                    <div class="cardBody">
+                    <div class="cardBody" id="cardBody">
                       <div class="tab">
                         <p>Choose Credit Package</p>
                         <div class="creditpackage" style="padding:10px">
@@ -113,42 +113,55 @@
 
                         <div id="paypal-button"></div>
 
-                          <script>
+                        <script>
+                        // Build PayPal payment request
+
                             paypal.Button.render({
-                              env: 'production', // Or 'sandbox',
 
-                              commit: true, // Show a 'Pay Now' button
+                                env: 'sandbox', // Or 'sandbox'
 
-                              style: {
-                                color: 'gold',
-                                size: 'responsive'
-                              },
+                                client: {
+                                    sandbox:    'ASQkEQw_NWUxBMYWepSofRwDI0QonYG2VYUvWMMm5_nUlfXx_twyGht_JKvhrkC0WEF2t-yngwExUHl1',
+                                    production: 'xxxxxxxxx'
+                                },
 
-                              payment: function(data, actions) {
-                                /*
-                                 * Set up the payment here
-                                 */
-                              },
+                                commit: true, // Show a 'Pay Now' button
+                                payment: function(data, actions) {
+                                  if (document.getElementById('a25').checked) {
+                                    value = document.getElementById('a25').value;
+                                  }
+                                  if (document.getElementById('a50').checked) {
+                                    value = document.getElementById('a50').value;
+                                  }
+                                  if (document.getElementById('a75').checked) {
+                                    value = document.getElementById('a75').value;
+                                  }
+                                  if (document.getElementById('a100').checked) {
+                                    value = document.getElementById('a100').value;
+                                  }
 
-                              onAuthorize: function(data, actions) {
-                                /*
-                                 * Execute the payment here
-                                 */
-                              },
+                                    return actions.payment.create({
+                                        payment: {
+                                            transactions: [
+                                                {
+                                                    amount: { total: value + '.00', currency: 'USD' }
+                                                }
+                                            ]
+                                        }
+                                    });
+                                },
 
-                              onCancel: function(data, actions) {
-                                /*
-                                 * Buyer cancelled the payment
-                                 */
-                              },
+                                onAuthorize: function(data, actions) {
+                                    return actions.payment.execute().then(function(payment) {
+                                      addCredits();
 
-                              onError: function(err) {
-                                /*
-                                 * An error occurred during the transaction
-                                 */
-                              }
+                                        // The payment is complete!
+                                        // You can now show a confirmation message to the customer
+                                    });
+                                }
+
                             }, '#paypal-button');
-                          </script>
+                        </script>
 
                       </div>
                     </div>

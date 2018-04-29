@@ -9,14 +9,30 @@ var spot;
 
 // function to populate html list every time new spot is taken
 function saveToList(event) {
-    if (event.which == 13 || event.keyCode == 13 || event.which == 1) { // as the user presses the enter key, we will attempt to save the data
-        var spotNumber = document.getElementById('spotNumber').value.trim();
-        if (spotNumber.length == 3) {
-            saveToFB(spotNumber);
-        }
+  firebase.database().ref('/USERS_TABLE/' + guid).once('value').then(function(snapshot) {
+      var hours = document.querySelector('input[name="hours"]:checked').value;
+      var credits = snapshot.val().credits;
+      var rootRef = firebase.database().ref();
+      var creditsRef = rootRef.child('/USERS_TABLE/' + guid + '/');
+
+      if(+credits >= (+hours / 2)){
+        if (event.which == 13 || event.keyCode == 13 || event.which == 1) { // as the user presses the enter key, we will attempt to save the data
+          var spotNumber = document.getElementById('spotNumber').value.trim();
+          if (spotNumber.length == 3) {
+            credits = +credits - (+hours / 2);
+            creditsRef.update({
+                "credits": credits
+              });
+              saveToFB(spotNumber);
+              }
         document.getElementById('spotNumber').value = '';
         return false;
+      }
     }
+    else {
+
+    }
+    });
 }
 
 // Add spot to DB by lot reffrence
@@ -129,7 +145,7 @@ function getFormInfo(){
   var spotNumber = document.getElementById('spotNumber').value.trim();
   var hours = document.querySelector('input[name="hours"]:checked').value;
 
-  document.getElementById("form-head").innerHTML = '<h4>Pay with Credits ($' + (hours / 2) + '.00' + ')</h4>';
+  document.getElementById("form-head").innerHTML = '<h4>Pay with Credits (' + (hours / 2) + ' Credits' + ')</h4>';
   document.getElementById("form-body").innerHTML = '<h5>Lot: ' + inLot + '</h5>' + '<h5>Spot: ' + ' ' + spotNumber + '</h5>' + '<h5>Hours: ' + ' ' + hours + '</h5><br>' + '<h5>Begin Time: ' + ' ' + timeStamp() + '</h5>' + '<h5>Expire Time: '  + expireTimeStamp(hours) + '</h5><br>';
 
 }
@@ -186,4 +202,22 @@ function fixStepIndicator(n) {
   }
   //... and adds the "active" class on the current step:
   x[n].className += " active";
+}
+
+function addCredits(){
+  var newCredits = 12;
+
+  var creditsVal = document.querySelector('input[name="credits"]:checked').value;
+
+  var rootRef = firebase.database().ref();
+  var creditsRef = rootRef.child('/USERS_TABLE/' + guid + '/');
+
+  firebase.database().ref('/USERS_TABLE/' + guid).once('value').then(function(snapshot) {
+      var credits = snapshot.val().credits;
+      newCredits = +credits + +creditsVal;
+      creditsRef.update({
+          "credits": newCredits
+      });
+
+    });
 }

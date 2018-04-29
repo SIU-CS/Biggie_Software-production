@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="mobile-style.css" />
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <script src="js/firebase_init_index.js"></script>
+    <script src="js/dropdownmenu.js"></script>
+    <script src="js/mobile_sidebar.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+    <script type="text/javascript" src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+</head>
+
+<body>
+    <div id="header" class="header">
+        <div class="logo">
+            <img src="img/siu-parking-logo.png" alt="SIU Logo">
+        </div>
+        <div onclick="myFunction()" class="accountbar">
+            <div class="profilepicture">
+                <img src="img/defaultprofilepicture.png" alt="profilepicture">
+            </div>
+            <div class="firstname">
+                <div class="firstnametext">
+                    <p class="fname" id="firstname"></p>
+                </div>
+                <div class="firstnamedropdown">
+                    <img id="menudrop" src="img/menudropclosed.png">
+                </div>
+            </div>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#myacc">My Account</a>
+                <a href="#help">Help</a>
+                <a onClick="doSignOut()" href="#signout">Sign Out</a>
+            </div>
+        </div>
+    </div>
+    <div id="textcenter" class="text-center">
+      <div class="mobile-menu">
+        <div class="mobile-button"  onclick="openMenu()">
+          <span class="glyphicon glyphicon-menu-hamburger" style="color: #f0f3f5;"></span>
+        </div>
+      </div>
+      <div id="sidebarMenu" class="sidebar" style="font-family: 'Roboto', sans-serif;">
+          <div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
+            <div class="menu-account">
+              <div class="menuprofilepicture"><img src="img/defaultprofilepicture.png" alt="profilepicture"></div>
+              <div class="menufirstname">
+
+                  <div class="menufirstnametext"><p class="fname" id="firstnamemenu"></p></div>
+                  <div class="menu-credits">
+                    <div id="menucredits" class="credits-text"><p>Credits:</p></div>
+                  </div>
+              </div>
+            </div>
+            <a href="index.html">
+                <span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
+                <a href="purchase.html"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
+                <a href="credits.html" class="active"><span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Add Credits</a>
+
+        </div>
+      </div>
+        <div class="main container-fluid" id="content">
+            <div class="purchase">
+                <div class="currentspot">
+                    <div class="cardTitle">
+                        <div class="cardIcon">
+                            <p>
+                                <span class="glyphicon glyphicon-dashboard"></span>
+                            </p>
+                        </div>
+                        <div class="cardText">
+                            <p id="currentSpot"> Add Credits</p>
+                        </div>
+                    </div>
+                    <div class="cardBody">
+                      <div class="tab">
+                        <p>Choose Credit Package</p>
+                        <div class="creditpackage" style="padding:10px">
+                            <ul class="amt-credit">
+                                <li>
+                                    <input type="radio" id="a25" name="credits" value="1" checked="checked" />
+                                    <label for="a25">1 Credits</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a50" name="credits" value="10" />
+                                    <label for="a50">10 Credits</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a75" name="credits" value="50" />
+                                    <label for="a75">50 Credits</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a100" name="hours" value="100" />
+                                    <label class="right" for="a100">100 Credits</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="paypal-button"></div>
+
+                          <script>
+                            paypal.Button.render({
+                              env: 'production', // Or 'sandbox',
+
+                              commit: true, // Show a 'Pay Now' button
+
+                              style: {
+                                color: 'gold',
+                                size: 'responsive'
+                              },
+
+                              payment: function(data, actions) {
+                                /*
+                                 * Set up the payment here
+                                 */
+                              },
+
+                              onAuthorize: function(data, actions) {
+                                /*
+                                 * Execute the payment here
+                                 */
+                              },
+
+                              onCancel: function(data, actions) {
+                                /*
+                                 * Buyer cancelled the payment
+                                 */
+                              },
+
+                              onError: function(err) {
+                                /*
+                                 * An error occurred during the transaction
+                                 */
+                              }
+                            }, '#paypal-button');
+                          </script>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="js/purchase.js"></script>

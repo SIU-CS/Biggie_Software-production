@@ -11,7 +11,6 @@ function openMenu()
     var id = setInterval(frame, 1);
     function frame() {
       if (pos == 160) {
-        sidebar.style.display = none;
         clearInterval(id);
       } else {
         pos = pos + 5;

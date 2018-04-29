@@ -28,6 +28,8 @@
           var profilepicture = snapshot.val().profilepicture;
           var credits = snapshot.val().credits;
           document.getElementById('firstname').innerHTML = firstname + " " + lastname;
+          document.getElementById('firstnamemenu').innerHTML = firstname + " " + lastname;
+          document.getElementById('menucredits').innerHTML = "Credits: " + credits;
 
 
           // If user is admin, add a button for admin panel

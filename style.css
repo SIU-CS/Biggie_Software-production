@@ -127,6 +127,10 @@
       text-align: center;
 }
 
+.menu-account{
+  display: none;
+}
+
 .content {
     min-height: 100%;
     margin: 0 auto;

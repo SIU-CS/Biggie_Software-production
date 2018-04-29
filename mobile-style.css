@@ -522,6 +522,7 @@ table.spotsTable tfoot .links a{
 }
 
 .purchase{
+  min-width: 300px;
   padding-left: 0px;
   margin-top: 0px;
 }

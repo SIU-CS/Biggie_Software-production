@@ -2,14 +2,12 @@
 <html>
 
 <head>
-    <title>Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="app.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="mobile-style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="header-sidebar.css" />
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="mobile-style.css" />
 </head>
 
 <body>
@@ -17,7 +15,6 @@
         <div class="logo">
             <img src="img/siu-parking-logo.png" alt="SIU Logo">
         </div>
-
         <div onclick="myFunction()" class="accountbar">
             <div class="profilepicture">
                 <img src="img/defaultprofilepicture.png" alt="profilepicture">
@@ -37,14 +34,12 @@
             </div>
         </div>
     </div>
-
     <div id="textcenter" class="text-center">
         <div class="mobile-menu">
             <div class="mobile-button" onclick="openMenu()">
                 <span class="glyphicon glyphicon-menu-hamburger" style="color: #f0f3f5;"></span>
             </div>
         </div>
-
         <div id="sidebarMenu" class="sidebar" style="font-family: 'Roboto', sans-serif;">
             <div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
                 <div class="menu-account">
@@ -52,7 +47,6 @@
                         <img src="img/defaultprofilepicture.png" alt="profilepicture">
                     </div>
                     <div class="menufirstname">
-
                         <div class="menufirstnametext">
                             <p class="fname" id="firstnamemenu"></p>
                         </div>
@@ -63,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" id="homebtn" class="active" data-target="home">
+                <a href="#" id="homebtn" data-target="home">
                     <span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
                 <a href="purchase.html">
                     <span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
@@ -71,51 +65,16 @@
                     <span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Add Credits</a>
             </div>
         </div>
-
-        <div class="main container-fluid" id="content">
-
-            <div class="home">
-                <div class="currentspot">
-                    <div class="cardTitle">
-                        <div class="cardIcon">
-                            <p>
-                                <span class="glyphicon glyphicon-dashboard"></span>
-                            </p>
-                        </div>
-                        <div class="cardText">
-                            <p id="currentSpot"> Current Spots</p>
-                        </div>
-                    </div>
-                    <div class="cardBody">
-                        <div class="cardSpotInformation">
-                            <div class="cardSpotTimeImage">
-                            </div>
-                            <div id="cardSpotTimeLot" class="cardSpotTimeLot">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="addTimeToSpot">
-
-                        <a href="addTime.html" class="addTimeBtn">
-                            <button>Add time to spot</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 
 </html>
+<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/firebase_init_index.js"></script>
 <script src="js/dropdownmenu.js"></script>
-<script src="js/dashboard.js"></script>
 <script src="js/mobile_sidebar.js"></script>
-<script src="js/home.js"></script>
-<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+<script src="js/firebase_init_index.js"></script>

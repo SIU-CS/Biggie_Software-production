@@ -16,7 +16,8 @@ function saveToList(event) {
       var creditsRef = rootRef.child('/USERS_TABLE/' + guid + '/');
 
       if(+credits >= (+hours / 2)){
-        if (event.which == 13 || event.keyCode == 13 || event.which == 1) { // as the user presses the enter key, we will attempt to save the data
+        if (event.which == 13 || event.keyCode == 13 || event.which == 1) { 
+            // as the user presses the enter key, we will attempt to save the data
           var spotNumber = document.getElementById('spotNumber').value.trim();
           if (spotNumber.length == 3) {
             credits = +credits - (+hours / 2);

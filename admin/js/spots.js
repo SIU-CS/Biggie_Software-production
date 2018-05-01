@@ -12,12 +12,12 @@ function refreshList() {
     lotARef.once("value").then(function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
-
+            
             //get data for each element in the db
             var childData = childSnapshot.val();
             var timeStamp = childSnapshot.val().PaidOn;
             var timerem = childSnapshot.val().TimeRem;
-
+    
             var d1 = new Date(); // Get the time right now
             d1 = d1.toISOString().substr(11, 8);
             d1 = minutesToMillis(d1);
@@ -25,9 +25,12 @@ function refreshList() {
             d2 = d2.toISOString().substr(11, 8);
             d2 = minutesToMillis(d2);
             var diff = (d1 - d2); // Minus those
+             
             timerem = minutesToMillis(timerem); // Change amount paid for to milliseconds
-
-            if ((timerem - diff) < 0) {
+             
+            //window.alert(timerem - diff); //test alert
+            
+            if ((timerem + diff) < 0) {
                 var spotRemoved = lotARef.child(key);
                 spotRemoved.remove();
             }
@@ -56,7 +59,7 @@ function refreshList() {
             var diff = (d1 - d2); // Minus those
             timerem = minutesToMillis(timerem); // Change amount paid for to milliseconds
 
-            if ((timerem - diff) < 0) {
+            if ((timerem + diff) < 0) {
                 var spotRemoved = lotBRef.child(key);
                 spotRemoved.remove();
             }

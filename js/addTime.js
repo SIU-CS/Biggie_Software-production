@@ -11,7 +11,7 @@ function myFunction(spot) {
         //window.alert(this.spot + this.lot);
     
     //this line is assinging "undefined" val to spotNumber
-     document.getElementById('spotNumber').value = this.spot;
+    // document.getElementById('spotNumber').value = this.spot;
     
    
 }

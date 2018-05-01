@@ -19,7 +19,7 @@
     <script src="js/firebase_init_index.js"></script>
     <script src="js/dropdownmenu.js"></script>
     <script src="js/mobile_sidebar.js"></script>
- 
+
     <script src="js/dashboard.js"></script>
     <script type="text/javascript" src="js/home.js"></script>
     <script type="text/javascript" src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
@@ -50,30 +50,34 @@
         </div>
     </div>
     <div id="textcenter" class="text-center">
-      <div class="mobile-menu">
-        <div class="mobile-button"  onclick="openMenu()">
-          <span class="glyphicon glyphicon-menu-hamburger" style="color: #f0f3f5;"></span>
-        </div>
-      </div>
-      <div id="sidebarMenu" class="sidebar" style="font-family: 'Roboto', sans-serif;">
-          <div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
-            <div class="menu-account">
-              <div class="menuprofilepicture"><img src="img/defaultprofilepicture.png" alt="profilepicture"></div>
-              <div class="menufirstname">
-
-                  <div class="menufirstnametext"><p class="fname" id="firstnamemenu"></p></div>
-                  <div class="menu-credits">
-                    <div id="menucredits" class="credits-text"><p>Credits:</p></div>
-                  </div>
-              </div>
+        <div class="mobile-menu">
+            <div class="mobile-button" onclick="openMenu()">
+                <span class="glyphicon glyphicon-menu-hamburger" style="color: #f0f3f5;"></span>
             </div>
-            <a href="index.html">
+        </div>
+        <div id="sidebarMenu" class="sidebar" style="font-family: 'Roboto', sans-serif;">
+            <div class="sidebar" id="sidebar" style="font-family: 'Roboto', sans-serif;">
+                <div class="menu-account">
+                    <div class="menuprofilepicture"><img src="img/defaultprofilepicture.png" alt="profilepicture"></div>
+                    <div class="menufirstname">
+
+                        <div class="menufirstnametext">
+                            <p class="fname" id="firstnamemenu"></p>
+                        </div>
+                        <div class="menu-credits">
+                            <div id="menucredits" class="credits-text">
+                                <p>Credits:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html">
                 <span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
-                <a href="purchase.html" ><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
+                <a href="purchase.html"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Purchase Spot</a>
                 <a href="credits.html"><span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Add Credits</a>
 
+            </div>
         </div>
-      </div>
         <div class="main container-fluid" id="content">
             <div class="purchase">
                 <div class="currentspot">
@@ -92,12 +96,12 @@
                             <div class="tab">
                                 <p>Your current lot and spot</p>
                                 <div class="pickspot">
-                                    <select id="lot">
+                                    <select id="lot" disabled="disabled">
                                         <option selected="true" >SIU Lot A</option>
                                         <option value="SIU Lot B">SIU Lot B</option>
                                     </select>
-                                    <input type="text" id="spotNumber" placeholder="Your spot"/>
-                                   
+                                    <input type="text" id="spotNumber" placeholder="Your spot" disabled/>
+
                                 </div>
                                 <p>Choose amout of time</p>
                                 <div class="amountoftime" style="padding:10px">
@@ -138,35 +142,49 @@
                                         <div>
                                             <div class="text-center" style="width: 50%; font-family: 'Roboto Condensed', sans-serif; margin-top: -140px">
 
-                                                </div>
                                             </div>
                                         </div>
-                                    </form>
                                 </div>
+                                </form>
                             </div>
-
-                            <div class="paymentbtns">
-                                <div id="formbtns" class="formbtns" style="float:right;">
-                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)" style="font-family: 'Roboto Condensed', sans-serif;">Previous</button>
-                                    <button type="button" id="nextBtn" class="continue" onclick="nextPrev(1)" style="font-family: 'Roboto Condensed', sans-serif;">Next</button>
-                                </div>
-                            </div>
-                            <!-- Circles which indicates the steps of the form: -->
-                            <div id="circles" style="text-align:center;margin-top:40px;">
-                                <span class="step"></span>
-                                <span class="step"></span>
-                            </div>
-                        </form>
-
                     </div>
+
+                    <div class="paymentbtns">
+                        <div id="formbtns" class="formbtns" style="float:right;">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)" style="font-family: 'Roboto Condensed', sans-serif;">Previous</button>
+                            <button type="button" id="nextBtn" class="continue" onclick="nextPrev(1)" style="font-family: 'Roboto Condensed', sans-serif;">Next</button>
+                        </div>
+                    </div>
+                    <!-- Circles which indicates the steps of the form: -->
+                    <div id="circles" style="text-align:center;margin-top:40px;">
+                        <span class="step"></span>
+                        <span class="step"></span>
+                    </div>
+                    </form>
 
                 </div>
 
             </div>
+
         </div>
+    </div>
     </div>
 </body>
 
 </html>
+<!-- script to auto full lot and spot -->
+<script>
+    function getCurrentSpot() {
+        firebase.database().ref('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').then(function(snapshot) {
+
+            var lot = snapshot.val().Lot;
+            var spot = snapshot.val().Spot;
+            document.getElementById('lot').value = lot;
+            document.getElementById('spotNumber').value = spot;
+          
+        });
+    }
+
+</script>
 <script type="text/javascript" src="js/purchase.js"></script>
 <script type="text/javascript" src="js/addTime.js"></script>

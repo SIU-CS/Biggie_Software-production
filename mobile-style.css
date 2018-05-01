@@ -77,6 +77,8 @@
 }
 
 .menufirstname{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
   line-height: 13px;
   white-space: nowrap;
   padding-top: 8px;
@@ -117,7 +119,7 @@
   left: 0px;
   background-color: #2c3b41;
   color: #4b646f;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   overflow-x: hidden;
   border-right: 1px solid #656565;
   z-index: 2;
@@ -134,7 +136,7 @@
   left: 0px;
   background-color: #2c3b41;
   color: #4b646f;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   overflow-x: hidden;
   border-right: 1px solid #656565;
   z-index: 2;
@@ -147,7 +149,7 @@
   color: #b8c7ce;
   display: block;
   padding: 15px 12px 15px 20px;
-  text-decoration: none;
+  font-family: 'Roboto Condensed', sans-serif;
   text-align: left;
 }
 

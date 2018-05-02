@@ -36,8 +36,11 @@
           if(priviledge === 1){
             document.getElementById('sidebar').innerHTML += '<a href="admin/index.html"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Admin Panel</a>';
           }
+          else {
+            document.getElementById('sidebar').innerHTML += '<a href="my_account.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;My Account</a>';
+          }
 
-  
+
           // Refresh current spot
           getCurrentSpot();
         });

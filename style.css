@@ -167,6 +167,12 @@
   visibility: hidden;
 }
 
+.menulogout{
+  position: absolute;
+  bottom: 85px;
+  width: 100%;
+}
+
 .users{
   margin-top: 85px;
 }

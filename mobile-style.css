@@ -44,6 +44,10 @@
   box-shadow: 1px 5px 5px 0 rgba(0,0,0,.20);
 }
 
+.menulogout{
+  display: visible;
+}
+
 .mobile-button{
   font-size: 25px;
   height: 40px;

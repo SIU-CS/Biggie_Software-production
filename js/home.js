@@ -12,10 +12,12 @@ firebase.database().ref('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').
 
   amount = minutesToMillis(amount); // Change amount paid for to milliseconds
     //spot.remove();
+    if((amount - diff) > 0){
+      document.getElementById('addTimeSpot').style.display = 'block';
+    }
   if((amount - diff) < 0){
       document.getElementById('addTimeSpot').style.display = 'none';
-    document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + "Time Expired!";
-    
+      document.getElementById('cardSpotTimeLot').innerHTML = lot + " " + spot + " " + "Time Expired!";
   }
   else {
     var timeLeft = Math.abs(amount - diff); // Get the difference

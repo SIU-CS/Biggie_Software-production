@@ -689,6 +689,10 @@ textarea {
 	resize: none;
 }
 
+.addTimeToSpot{
+  display: none;
+}
+
 .paymentbtns{
   overflow:auto;
   padding-top: 10px;

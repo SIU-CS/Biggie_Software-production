@@ -54,14 +54,15 @@ function saveToFB(spotNumber) {
     if (textbox.disabled) {
         // If disabled, do this 
         //alert("disabled"); //test alert
-      
+        
+        //set initial time and hours purchased
         rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').then(function (snapshot) {
-          initialTime = snapshot.val().PurchaseTime;  
-        hours = parseInt(hours) + (parseInt(snapshot.val().Amount) / 60);
-            
-              
+            initialTime = snapshot.val().PurchaseTime;
+            hours = parseInt(hours) + (parseInt(snapshot.val().Amount) / 60);
+
         });
-        alert(hours);
+        alert(hours + ":00:00 hours added");
+        //make user db entry
         var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
         parkingRef.set({
             "Lot": inLot,
@@ -69,12 +70,15 @@ function saveToFB(spotNumber) {
             "Amount": hours * 60,
             "PurchaseTime": initialTime
         });
-
+       
+        //make lots db entry
         lotsRef.child(inLot).child(spotNumber).set({
             TimeRem: (hours + ":00:00"),
             PaidOn: initialTime
         });
-        
+         window.location = "index.html";
+        refreshList();
+
     } else {
         var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
         parkingRef.set({
@@ -91,33 +95,10 @@ function saveToFB(spotNumber) {
         //alert("Not disabled"); //test alert
     }
 
-
     window.location = "index.html";
     refreshList();
 }
-/**
 
-function checkIfCurrentSpot() {
-    var inLot = document.getElementById('lot').value.trim();
-    var inSpot = document.getElementById('spotNumber').value;
-
-    firebase.database().ref('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').then(function (snapshot) {
-
-        var currentLot = snapshot.val().Lot;
-        var currentSpot = snapshot.val().Spot;
-
-        // window.alert(inLot + "  "+ inSpot + " == ?"+ currentLot + "  "+ currentSpot);
-        if ((currentLot == inLot) && (inSpot == currentSpot)) {
-
-            return true;
-
-        } else {
-
-            return false;
-        }
-    });
-}
-**/
 // Create time stamp
 function timeStamp() {
     // Create a date object with the current time

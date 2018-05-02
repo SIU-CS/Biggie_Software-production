@@ -19,6 +19,9 @@
       else
       // If someone is logged in, get the uid and place infomation
       {
+        var currentPath = window.location.pathname;
+        var currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
         var uid = user.uid;
         guid = uid;
         firebase.database().ref('/USERS_TABLE/' + uid).once('value').then(function(snapshot) {
@@ -37,7 +40,14 @@
             document.getElementById('sidebar').innerHTML += '<a href="admin/index.html"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Admin Panel</a>';
           }
           else {
-            document.getElementById('sidebar').innerHTML += '<a href="my_account.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;My Account</a>';
+            if(currentPage == "my_account.html")
+            {
+              document.getElementById('sidebar').innerHTML += '<a href="my_account.html" class="active"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;My Account</a>';
+            }
+            else
+            {
+              document.getElementById('sidebar').innerHTML += '<a href="my_account.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;My Account</a>';
+            }
           }
 
 

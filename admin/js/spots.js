@@ -28,9 +28,9 @@ function refreshList() {
              
             timerem = minutesToMillis(timerem); // Change amount paid for to milliseconds
              
-            //window.alert(timerem - diff); //test alert
+           // window.alert(key  + " "+(timerem + diff)); //test alert
             
-            if ((timerem + diff) < 0) {
+            if ((timerem - diff) < 0) {
                 var spotRemoved = lotARef.child(key);
                 spotRemoved.remove();
             }
@@ -59,7 +59,7 @@ function refreshList() {
             var diff = (d1 - d2); // Minus those
             timerem = minutesToMillis(timerem); // Change amount paid for to milliseconds
 
-            if ((timerem + diff) < 0) {
+            if ((timerem - diff) < 0) {
                 var spotRemoved = lotBRef.child(key);
                 spotRemoved.remove();
             }

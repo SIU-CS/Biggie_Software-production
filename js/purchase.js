@@ -11,33 +11,47 @@ var spot;
 
 // function to populate html list every time new spot is taken
 function saveToList(event) {
-    firebase.database().ref('/USERS_TABLE/' + guid).once('value').then(function (snapshot) {
-        var hours = document.querySelector('input[name="hours"]:checked').value;
-        var credits = snapshot.val().credits;
-        var rootRef = firebase.database().ref();
-        var creditsRef = rootRef.child('/USERS_TABLE/' + guid + '/');
+    var inLot = document.getElementById('lot').value.trim();
+    var inSpot = document.getElementById('spotNumber').value;
 
-        if (+credits >= (+hours / 2)) {
-            if (event.which == 13 || event.keyCode == 13 || event.which == 1) {
-                // as the user presses the enter key, we will attempt to save the data
-                var spotNumber = document.getElementById('spotNumber').value.trim();
-                if (spotNumber.length == 3) {
-                    credits = +credits - (+hours / 2);
-                    creditsRef.update({
-                        "credits": credits
-                    });
-                    saveToFB(spotNumber);
+    firebase.database().ref('/Lots/').child(inLot).once('value').then(function (snapshot) {
+      if (snapshot.child(inSpot).exists()) {
+        firebase.database().ref('/USERS_TABLE/' + guid).once('value').then(function (snapshot) {
+            var hours = document.querySelector('input[name="hours"]:checked').value;
+            var credits = snapshot.val().credits;
+            var rootRef = firebase.database().ref();
+            var creditsRef = rootRef.child('/USERS_TABLE/' + guid + '/');
+
+            if (+credits >= (+hours / 2)) {
+                if (event.which == 13 || event.keyCode == 13 || event.which == 1) {
+                    // as the user presses the enter key, we will attempt to save the data
+                    var spotNumber = document.getElementById('spotNumber').value.trim();
+                    if (spotNumber.length == 3) {
+                        credits = +credits - (+hours / 2);
+                        creditsRef.update({
+                            "credits": credits
+                        });
+                        saveToFB(spotNumber);
+                    }
+                    document.getElementById('spotNumber').value = '';
+                    return false;
                 }
-                document.getElementById('spotNumber').value = '';
-                return false;
+            } else {
+                document.getElementById("cardBody").innerHTML = '<p>You do not have enough credits!</p>';
+                document.getElementById("circles").innerHTML = '';
+                document.getElementById("formbtns").innerHTML = '<button type="button" id="nextBtn" class="continue" onclick="goBack()">Go Back</button>';
+                document.getElementById("prevBtn").style.display = "none";
             }
-        } else {
-            document.getElementById("cardBody").innerHTML = '<p>You do not have enough credits!</p>';
-            document.getElementById("circles").innerHTML = '';
-            document.getElementById("formbtns").innerHTML = '<button type="button" id="nextBtn" class="continue" onclick="goBack()">Go Back</button>';
-            document.getElementById("prevBtn").style.display = "none";
-        }
+        });
+      }
+      else {
+        document.getElementById("cardBody").innerHTML = '<p>Spot: ' +  inSpot + ' does not exist!</p>';
+        document.getElementById("circles").innerHTML = '';
+        document.getElementById("formbtns").innerHTML = '<button type="button" id="nextBtn" class="continue" onclick="goBack()">Go Back</button>';
+        document.getElementById("prevBtn").style.display = "none";
+      }
     });
+
 }
 
 function goBack() {

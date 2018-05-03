@@ -76,8 +76,40 @@
                             <p> My Account</p>
                         </div>
                     </div>
-                    <div class="cardBody">
-
+                    <div id="cardBody" class="cardBody">
+                      <form>
+                        <div class="formheader">
+                          <p>Personal Information</p>
+                        </div>
+                        <div class="account-info">
+                          <p>First Name:</p>
+                          <input id="userfirstname" type="text" class="account-form" name="fname">
+                        </div>
+                        <div class="account-info">
+                          <p>Last Name:</p>
+                          <input id="userlastname" type="text" class="account-form" name="fname">
+                        </div>
+                        <div class="account-info">
+                          <p>Email:</p>
+                          <input id="useremail" type="text" class="account-form" name="fname">
+                        </div>
+                        <br>
+                        <button onClick="updateAccountInfo()" class="btn btn-default" type="button" id="quickstart-sign-up" name="updateinfo">Update</button>
+                      </form>
+                      <br>
+                      <div class="formheader">
+                        <p>Change Password</p>
+                      </div>
+                      <div class="account-info">
+                        <p>New Password:</p>
+                        <input id="newpassword" type="pass" class="account-form" name="fname">
+                      </div>
+                      <div class="account-info">
+                        <p>Confirm New Password:</p>
+                        <input id="confirmnewpassword" type="pass" class="account-form" name="fname">
+                      </div>
+                      <br>
+                      <button onClick="changePassword()" class="btn btn-default" type="button" id="quickstart-sign-up" name="updateinfo">Change Password</button>
                     </div>
                 </div>
             </div>

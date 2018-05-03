@@ -30,6 +30,7 @@
           var priviledge = snapshot.val().priviledge;
           var profilepicture = snapshot.val().profilepicture;
           var credits = snapshot.val().credits;
+          var email = snapshot.val().email;
           document.getElementById('firstname').innerHTML = firstname + " " + lastname;
           document.getElementById('firstnamemenu').innerHTML = firstname + " " + lastname;
           document.getElementById('menucredits').innerHTML = "Credits: " + credits;
@@ -43,6 +44,9 @@
             if(currentPage == "my_account.html")
             {
               document.getElementById('sidebar').innerHTML += '<a href="my_account.html" class="active"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;My Account</a>';
+              document.getElementById('userfirstname').value = firstname;
+              document.getElementById('userlastname').value = lastname;
+              document.getElementById('useremail').value = email;
             }
             else
             {
@@ -56,3 +60,47 @@
         });
       }
     });
+
+    function updateAccountInfo(){
+      var newfirstname;
+      var newlastname;
+      var user = firebase.auth().currentUser;
+
+      newfirstname = document.getElementById('userfirstname').value;
+      newlastname = document.getElementById('userlastname').value;
+      newemail = document.getElementById('useremail').value;
+
+      var rootRef = firebase.database().ref();
+      var userRef = rootRef.child('/USERS_TABLE/' + guid);
+
+      user.updateEmail(newemail).then(function() {
+        userRef.update({
+            "firstname": newfirstname,
+            "lastname": newlastname,
+            "email": newemail,
+        });
+        document.getElementById("cardBody").innerHTML = '<p>Successfully Updated Information!</p><br><button onClick="goMyAccount()" class="btn btn-default" type="button" id="quickstart-sign-up" name="updateinfo">Return</button>';
+      }).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        document.getElementById("cardBody").innerHTML = '<p>Error: ' + errorMessage + '</p><br><button onClick="goMyAccount()" class="btn btn-default" type="button" id="quickstart-sign-up" name="updateinfo">Go Back</button>';      });
+    }
+
+    function changePassword(){
+      newPassword = document.getElementById("newpassword").value;
+      confirmNewPassword = document.getElementById("confirmnewpassword").value;
+      if(newPassword === confirmNewPassword){
+        var user = firebase.auth().currentUser;
+        user.updatePassword(newPassword).then(function() {
+          document.getElementById("cardBody").innerHTML = '<p>Successfully Updated Password!</p><br><button onClick="goMyAccount()" class="btn btn-default" type="button" id="quickstart-sign-up" name="updateinfo">Return</button>';
+        }).catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          document.getElementById("cardBody").innerHTML = '<p>Error: ' + errorMessage + '</p><br><button onClick="goMyAccount()" class="btn btn-default" type="button" id="quickstart-sign-up" name="updateinfo">Go Back</button>';
+        });
+      }
+    }
+
+    function goMyAccount(){
+      window.location = 'my_account.html';
+    }

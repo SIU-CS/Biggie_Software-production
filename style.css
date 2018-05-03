@@ -173,6 +173,38 @@
   width: 100%;
 }
 
+.account-info{
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.account-info p{
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: left;
+  padding-left: 4px;
+  color: #6F6F6F;
+}
+
+.account-form{
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 16px;
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1.42857143;
+  color: #1a1a1a;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
 .users{
   margin-top: 85px;
 }
@@ -438,8 +470,21 @@ input.invalid {
 .tab p{
   border-bottom: 1px solid #e1e8ee;
   height: 60px;
-padding: 20px 30px 0;
-text-align: left;
+  padding: 20px 30px 0;
+  text-align: left;
+}
+
+.formheader{
+
+}
+
+.formheader p{
+  border-bottom: 1px solid #e1e8ee;
+  font-size: 20px;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: left;
+  padding-left: 4px;
+  color: #6F6F6F;
 }
 
 .pay{

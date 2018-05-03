@@ -75,9 +75,17 @@ function saveToFB(spotNumber) {
         //alert("disabled"); //test alert
         //set initial time and hours purchased
         rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').then(function (snapshot) {
+<<<<<<< HEAD
         var initialTime = snapshot.val().PurchaseTime;
         hours = parseInt(hours) + (parseInt(snapshot.val().Amount) / 60);
         //alert(hours + ":00:00 hours added");
+=======
+            initialTime = snapshot.val().PurchaseTime;
+            hours = parseInt(hours) + (parseInt(snapshot.val().Amount) / 60);
+
+        });
+        //alert(hours + ":00:00 hours added"); test alert
+>>>>>>> last-minute-fixes
         //make user db entry
 
         var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');

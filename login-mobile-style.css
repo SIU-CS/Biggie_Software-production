@@ -33,18 +33,12 @@ html, body {
     padding-bottom: 30px;
 }
 
-.information-bar {
-    text-align: center;
-    background-color: #f1f1f1;
-    font-size: large;
-    padding: 10px;
-}
-
 .tab-content {
     display: none;
     background: #660000;
     padding: 15px;
     border-radius: 0 0 15px 15px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .tab-content.current{
@@ -67,6 +61,7 @@ ul.tabs li {
     display: inline-block;
     padding: 10px 5px;
     cursor: pointer;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 ul.tabs li.current {

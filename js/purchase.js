@@ -80,7 +80,7 @@ function saveToFB(spotNumber) {
             hours = parseInt(hours) + (parseInt(snapshot.val().Amount) / 60);
 
         });
-        alert(hours + ":00:00 hours added");
+        //alert(hours + ":00:00 hours added"); test alert
         //make user db entry
         var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
         parkingRef.set({

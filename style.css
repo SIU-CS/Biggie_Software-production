@@ -355,6 +355,7 @@ table.spotsTable tfoot .links a{
   border: 1px solid #c2cfd6;
   height: 100%;
   font-family: 'Roboto Condensed', sans-serif;
+
 }
 
 .cardTitle{
@@ -429,10 +430,6 @@ table.spotsTable tfoot .links a{
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  background-color: #f1f1f1;
 }
 
 .text-center{

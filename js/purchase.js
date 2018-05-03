@@ -68,34 +68,38 @@ function saveToFB(spotNumber) {
     var inSpot = document.getElementById('spotNumber').value;
     var rootRef = firebase.database().ref();
     var textbox = document.getElementById('spotNumber');
-    var initialTime;
-    console.log("HEY");
+
     if (textbox.disabled) {
+      console.log("disabled");
         // If disabled, do this
         //alert("disabled"); //test alert
-
         //set initial time and hours purchased
         rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').then(function (snapshot) {
-            initialTime = snapshot.val().PurchaseTime;
-            hours = parseInt(hours) + (parseInt(snapshot.val().Amount) / 60);
-
-        });
-        alert(hours + ":00:00 hours added");
+        var initialTime = snapshot.val().PurchaseTime;
+        hours = parseInt(hours) + (parseInt(snapshot.val().Amount) / 60);
+        //alert(hours + ":00:00 hours added");
         //make user db entry
+
         var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
-        parkingRef.set({
+        parkingRef.update({
             "Lot": inLot,
             "Spot": spotNumber,
             "Amount": hours * 60,
             "PurchaseTime": initialTime
         });
 
+        var dbTimeRem = hours + ":00:00";
+        console.log(dbTimeRem + " and " + initialTime);
         //make lots db entry
-        lotsRef.child(inLot).child(spotNumber).set({
-            TimeRem: (hours + ":00:00"),
+        lotsRef.child(inLot).child(spotNumber).update({
+            TimeRem: dbTimeRem,
             PaidOn: initialTime
         });
-         window.location = "index.html";
+        document.getElementById("cardBody").innerHTML = '<br><p>Successfully purchased more time at: ' + inLot + ' ' + spotNumber + '</p>';
+        document.getElementById("circles").innerHTML = '';
+        document.getElementById("formbtns").innerHTML = '<button type="button" id="nextBtn" class="continue" onclick="goHome()">Continue</button>';
+        document.getElementById("prevBtn").style.display = "none";
+    });
     } else {
         var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
         parkingRef.set({

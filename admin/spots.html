@@ -1,7 +1,7 @@
 <head>
     <script src="js/spots.js"></script>
 </head>
-<div class="spottable">
+<div id="spotstable" class="spottable">
     <div class="currentspot">
         <div class="cardTitle">
             <div class="cardIcon">
@@ -23,7 +23,7 @@
                 <tfoot>
                     <tr>
                         <td colspan="4">
-                            <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+                            <div class="links"><a onClick="showAddSpot('A')" href="#">Add Spot</a> <a onClick="showDeleteSpot('A')" class="active" href="#">Delete Spot</a></div>
                         </td>
                     </tr>
                 </tfoot>
@@ -48,11 +48,13 @@
                     </tr>
                 </tbody>
             </table>
+            <div id="spotsAoption" class="spotsoption">
+            </div>
         </div>
     </div>
 </div>
 
-<div class="spottableb">
+<div id="spotstableb" class="spottableb">
     <div class="currentspot">
         <div class="cardTitle">
             <div class="cardIcon">
@@ -68,12 +70,13 @@
                     <tr>
                         <th>Spot</th>
                         <th>Time Taken</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <td colspan="4">
-                            <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+                            <div class="links"><a onClick="showAddSpot('B')" href="#">Add Spot</a> <a onClick="showDeleteSpot('B')" class="active" href="#">Delete Spot</a></div>
                         </td>
                     </tr>
                 </tfoot>
@@ -92,6 +95,8 @@
                     </tr>
                 </tbody>
             </table>
+            <div id="spotsBoption" class="spotsoption">
+            </div>
         </div>
     </div>
 </div>

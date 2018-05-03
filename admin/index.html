@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../style.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../app.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <div class="header">
+    <div id="header" class="header">
         <div class="logo">
             <img src="../img/siu-parking-logo-admin.png" alt="SIU Logo">
         </div>
@@ -45,9 +45,66 @@
                 <a href="../index.html"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;&nbsp;Back</a>
             </div>
             <div class="admin-main" id="content">
-
+              <div class="users">
+                  <div class="currentspot">
+                      <div class="cardTitle">
+                          <div class="cardIcon">
+                              <p><span class="glyphicon glyphicon-user"></span></p>
+                          </div>
+                          <div class="cardText">
+                              <p id="currentSpot">Users</p>
+                          </div>
+                      </div>
+                      <div class="cardBodyFull">
+                          <table class="userTable">
+                              <thead>
+                                  <tr>
+                                      <th>First Name</th>
+                                      <th>Last Name</th>
+                                      <th>Email</th>
+                                      <th>Type</th>
+                                  </tr>
+                              </thead>
+                              <tfoot>
+                                  <tr>
+                                      <td colspan="4">
+                                          <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+                                      </td>
+                                  </tr>
+                              </tfoot>
+                              <tbody id="tbody">
+                                  <tr>
+                                      <td>cell1_1</td>
+                                      <td>cell2_1</td>
+                                      <td>cell3_1</td>
+                                      <td>cell4_1</td>
+                                  </tr>
+                                  <tr>
+                                      <td>cell1_2</td>
+                                      <td>cell2_2</td>
+                                      <td>cell3_2</td>
+                                      <td>cell4_2</td>
+                                  </tr>
+                                  <tr>
+                                      <td>cell1_3</td>
+                                      <td>cell2_3</td>
+                                      <td>cell3_3</td>
+                                      <td>cell4_3</td>
+                                  </tr>
+                                  <tr>
+                                      <td>cell1_4</td>
+                                      <td>cell2_4</td>
+                                      <td>cell3_4</td>
+                                      <td>cell4_4</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+<script src="js/users.js"></script>

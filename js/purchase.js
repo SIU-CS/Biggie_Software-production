@@ -43,6 +43,10 @@ function saveToList(event) {
 function goBack() {
     window.location = "purchase.html";
 }
+
+function goHome() {
+    window.location = "index.html";
+}
 // Add spot to DB by lot reffrence
 function saveToFB(spotNumber) {
     var inLot = document.getElementById('lot').value.trim();
@@ -51,10 +55,11 @@ function saveToFB(spotNumber) {
     var rootRef = firebase.database().ref();
     var textbox = document.getElementById('spotNumber');
     var initialTime;
+    console.log("HEY");
     if (textbox.disabled) {
-        // If disabled, do this 
+        // If disabled, do this
         //alert("disabled"); //test alert
-        
+
         //set initial time and hours purchased
         rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT').once('value').then(function (snapshot) {
             initialTime = snapshot.val().PurchaseTime;
@@ -70,15 +75,13 @@ function saveToFB(spotNumber) {
             "Amount": hours * 60,
             "PurchaseTime": initialTime
         });
-       
+
         //make lots db entry
         lotsRef.child(inLot).child(spotNumber).set({
             TimeRem: (hours + ":00:00"),
             PaidOn: initialTime
         });
          window.location = "index.html";
-        refreshList();
-
     } else {
         var parkingRef = rootRef.child('/USERS_TABLE/' + guid + '/CURRENT_SPOT');
         parkingRef.set({
@@ -87,16 +90,20 @@ function saveToFB(spotNumber) {
             "Amount": hours * 60,
             "PurchaseTime": timeStamp()
         });
+        var dbTimeStamp = timeStamp();
+        var dbTimeRem = hours + ":00:00";
 
-        lotsRef.child(inLot).child(spotNumber).set({
-            TimeRem: (hours + ":00:00"),
-            PaidOn: timeStamp()
+        console.log("THISPART" + inLot + spotNumber);
+        lotsRef.child(inLot).child(spotNumber).update({
+            TimeRem: dbTimeRem,
+            PaidOn: dbTimeStamp
         });
         //alert("Not disabled"); //test alert
+        document.getElementById("cardBody").innerHTML = '<br><p>Successfully purchased: ' + inLot + ' ' + spotNumber + '</p>';
+        document.getElementById("circles").innerHTML = '';
+        document.getElementById("formbtns").innerHTML = '<button type="button" id="nextBtn" class="continue" onclick="goHome()">Continue</button>';
+        document.getElementById("prevBtn").style.display = "none";
     }
-
-    window.location = "index.html";
-    refreshList();
 }
 
 // Create time stamp

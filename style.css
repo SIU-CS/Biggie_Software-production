@@ -720,6 +720,10 @@ input, button {
 	box-shadow: 0 0 20px #333;
 }
 
+.admin-main{
+  padding-left: 160px;
+}
+
 h1 {
 	font-weight: 300;
 	font-size: 24px;

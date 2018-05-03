@@ -12,30 +12,28 @@ function refreshList() {
     lotARef.once("value").then(function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
             var key = childSnapshot.key;
-            
+
             //get data for each element in the db
             var childData = childSnapshot.val();
             var timeStamp = childSnapshot.val().PaidOn;
             var timerem = childSnapshot.val().TimeRem;
-    
+
             var d1 = new Date(); // Get the time right now
-            d1 = d1.toISOString().substr(11, 8);
-            d1 = minutesToMillis(d1);
             var d2 = new Date(timeStamp); // Get the purchase time
-            d2 = d2.toISOString().substr(11, 8);
-            d2 = minutesToMillis(d2);
-            var diff = (d1 - d2); // Minus those
-             
+            var diff = Math.abs(d1-d2); // Minus those
+
+            amount = minutesToMillis(amount); // Change amount paid for to milliseconds
+
             timerem = minutesToMillis(timerem); // Change amount paid for to milliseconds
-             
+
            // window.alert(key  + " "+(timerem + diff)); //test alert
-            
+
             if ((timerem - diff) < 0) {
                 var spotRemoved = lotARef.child(key);
                 spotRemoved.remove();
             }
 
-            var entry = '<tr><td>' + key + '</td><td>' + timeStamp + '</td></tr>';
+            var entry = '<tr><td>' + key + '</td><td>' + timeStamp + '</td><td>' + timerem + '</td></tr>';
             document.getElementById('tbody').innerHTML += entry;
         });
     });
